@@ -3,15 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>王彦淳 · Yolanda Wang</title>
+<title>Yolanda Wang · 王彦淳</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@300&display=swap" rel="stylesheet">
 
 <script>
-/* ============================================================
-   ✏️  彦淳的内容区 — 只需要改这里！
-   ============================================================
-
-   📌 改完保存文件，推到 GitHub 就自动更新了。
+/* 
    📌 注意：文字里如果有单引号 ' 请改成 &#39;
    ============================================================ */
 
@@ -21,9 +17,7 @@ const DATA = {
   bio: {
     eyebrow_zh: "",
     eyebrow_en: "",
-    story_zh: `其实我不知道该怎么描述自己，我的生活痕迹跨越三个大洲，在许多国家的大街小巷兜兜转转过，这些经历组成了我脚下的路，组成了现在的我，这不是错
-
-[在这里写你的故事。你从哪里来？对什么着迷？正在创造什么？用你自己的声音说话。]`,
+    story_zh: `其实我不知道该怎么描述自己，我的生活痕迹跨越三个大洲，在许多国家的大街小巷兜兜转转过。我是悉尼大学计算机大二的一名学生，还没有特别的喜好但目前在探索后端维护及AI应用领域，欢迎你来认识我。`,
     story_en: `Hi, I'm Yolanda —
 
 [Write your story here. Where are you from? What fascinates you? What are you creating? Speak in your own voice.]`,
@@ -54,25 +48,79 @@ const DATA = {
       place:    "连城紫阳书院",
       role_zh:  "民宿管家",
       role_en:  "Title / Role",
-      desc_zh:  "去过两次，作为稻米纯玩，看到阿姨很辛苦，问有没有需要帮忙的，于是帮忙接待客人，打扫客房（干不了一点，好累）",
+      desc_zh:  "接待客人，办理入住，打扫客房",
       desc_en:  "Write your story here.",
     },
     {
+      date_zh:  "2025.10 — 2025.10",
+      date_en:  "2025.10 — 2025.10",
+      place:    "Serendipity尚禧 悉尼",
+      role_zh:  "婚纱店模特",
+      role_en:  "Title / Role",
+      desc_zh:  "试穿婚纱然后拍，探讨时尚",
+      desc_en:  "Write your story here.",
+    },    
+    {
+      date_zh:  "2025.7 — 2025.7",
+      date_en:  "2025.7 — 2025.7",
+      place:    "信永中和会计师事务所 厦门",
+      role_zh:  "审计实习生",
+      role_en:  "Title / Role",
+      desc_zh:  "核对报表、熟悉审计报表及用于格式",
+      desc_en:  "Write your story here.",
+    },    
+    {
       date_zh:  "2025.3 — 2025.3",
-      date_en:  "2023 — Present",
-      place:    "公司 / 项目名称",
+      date_en:  "2025.3 — 2025.3 悉尼",
+      place:    "悉尼歌剧院",
       role_zh:  "职位 / 角色",
       role_en:  "Title / Role",
       desc_zh:  "合作愉快",
       desc_en:  "Write your story here.",
     },
     {
+      date_zh:  "2025.1 — 2025.1",
+      date_en:  "2025.1 — 2025.1",
+      place:    "安发（福建）生物科技有限公司 宁德",
+      role_zh:  "运营维护",
+      role_en:  "Title / Role",
+      desc_zh:  "接网线、检查机房",
+      desc_en:  "Write your story here.",
+    },
+    {
+      date_zh:  "2025.2 — 至今",
+      date_en:  "2025.2 — Present",
+      place:    "自雇",
+      role_zh:  "退租纠纷处理",
+      role_en:  "Title / Role",
+      desc_zh:  "处理我自己的and给朋友提供建议及解决方案",
+      desc_en:  "Write your story here.",
+    },    
+    {
       date_zh:  "2024.10 — 至今",
-      date_en:  "2023 — Present",
-      place:    "公司 / 项目名称",
+      date_en:  "2024.10 — Present",
+      place:    "Puppuccino Pet Spa 悉尼",
       role_zh:  "职位 / 角色",
       role_en:  "Title / Role",
       desc_zh:  "洗狗，吹狗，修剪狗，应付难缠的客人和老板，拿着报表算老板利润率",
+      desc_en:  "Write your story here.",
+    },
+    {
+      date_zh:  "2021.9 — 2024.6",
+      date_en:  "2021.9 — 2024.6",
+      place:    "2021.9 - 2022.6在Polydemia, Oxford，后自雇",
+      role_zh:  "GCSE&ALEVEL Math and Physics Tutor",
+      role_en:  "Title / Role",
+      desc_zh:  "教人物理和数学",
+      desc_en:  "Write your story here.",
+    },
+    {
+      date_zh:  "2020 — 至今",
+      date_en:  "2024.10 — Present",
+      place:    "自雇",
+      role_zh:  "职位 / 角色",
+      role_en:  "Title / Role",
+      desc_zh:  "分享留学经验",
       desc_en:  "Write your story here.",
     },
   ],
@@ -408,7 +456,7 @@ body.en .zh{display:none!important}
   <div class="sec-label">Story</div>
   <h2 class="sec-title zh">所谓工作经历</h2>
   <h2 class="sec-title en">My Story</h2>
-  <p class="con-tagline zh"> 简历里边总是需要垂直的经历、具体的描述和量化的数据，我也只好一遍遍修改，让自己更适合那个框架，可那只是一部分我。过去我为探索自己的方向、喜好做了许多尝试，我不想将它们掩埋，于是我在这里记录下。</p>
+  <p class="con-tagline zh"> 简历里边总是需要垂直的经历、具体的描述和量化的数据，我也只好一遍遍修改，让自己更适合那个框架。我经常被问及为什么过往经验那么杂、为什么不去大厂……我为探索自己的方向、喜好做了许多尝试，这不是错，这不丢人。我不想将它们掩埋，我在这里记录下一个完整版本的我。</p>
   <p class="con-tagline en">Whether it's a collaboration, a creative exchange, or just saying hello — you're always welcome.</p>
   <div class="story-list" id="story-render"></div>
 </div>
