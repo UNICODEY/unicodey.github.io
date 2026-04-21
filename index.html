@@ -203,18 +203,12 @@ const DATA = {
       { name: "阿姆斯特丹", lon:   4.90, lat:  52.37, hub: false },
       { name: "苏黎世",     lon:   8.54, lat:  47.38, hub: false },
       { name: "维也纳",     lon:  16.37, lat:  48.21, hub: false },
-      { name: "罗马",       lon:  12.50, lat:  41.90, hub: false },
-      { name: "马德里",     lon:  -3.70, lat:  40.42, hub: false },
-      { name: "巴塞罗那",   lon:   2.17, lat:  41.39, hub: false },
       { name: "慕尼黑",     lon:  11.58, lat:  48.14, hub: false },
       { name: "赫尔辛基",   lon:  24.94, lat:  60.17, hub: false },
       { name: "斯德哥尔摩", lon:  18.07, lat:  59.33, hub: false },
       { name: "哥本哈根",   lon:  12.57, lat:  55.68, hub: false },
       { name: "布鲁塞尔",   lon:   4.35, lat:  50.85, hub: false },
       { name: "迪拜",       lon:  55.27, lat:  25.20, hub: false },
-      { name: "洛杉矶",     lon: -118.24,lat:  34.05, hub: false },
-      { name: "纽约",       lon:  -74.01,lat:  40.71, hub: false },
-      { name: "旧金山",     lon: -122.42,lat:  37.77, hub: false },
     ],
 
     routes: [
@@ -270,12 +264,6 @@ const DATA = {
       { from: "法兰克福",to:"阿姆斯特丹",   domestic: false },
       { from: "法兰克福",to:"慕尼黑",       domestic: false },
       { from: "伦敦",   to: "哥本哈根",     domestic: false },
-      /* 中东转机 */
-      { from: "北京",   to: "迪拜",         domestic: false },
-      /* 中国 → 北美 */
-      { from: "北京",   to: "洛杉矶",       domestic: false },
-      { from: "上海",   to: "纽约",         domestic: false },
-      { from: "北京",   to: "旧金山",       domestic: false },
     ],
 
   },
@@ -399,7 +387,7 @@ body.en .zh{display:none!important}
 
 <div id="wcmodal" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wc-box">
-    <div class="wc-qr">请替换为微信二维码图片</div>
+    <div class="wc-qr"><img src="wx.jpg" style="width:100%;height:100%;object-fit:contain;border-radius:8px"></div>
     <div class="wc-title">微信 · WeChat</div>
     <div class="wc-sub zh">扫码添加好友</div>
     <div class="wc-sub en">Scan to connect</div>
