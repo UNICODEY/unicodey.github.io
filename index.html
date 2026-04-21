@@ -23,6 +23,46 @@ const DATA = {
 [Write your story here. Where are you from? What fascinates you? What are you creating? Speak in your own voice.]`,
   },
 
+  /* —— 教育经历 —— 按时间倒序排列，最新的放最上面 */
+  /* —— 教育经历 —— 最新的放最上面，复制 { } 块新增 */
+  education: [
+    {
+      year:      "2024",
+      end:       "至今",
+      end_en:    "Present",
+      school:    "悉尼大学",
+      school_en: "The University of Sydney",
+      degree_zh: "计算机科学 本科",
+      degree_en: "Bachelor of Computer Science",
+      location:  "Sydney, Australia",
+    },
+    /* 新增示例：
+    {
+      year:      "2020",
+      end:       "2024",
+      end_en:    "2024",
+      school:    "学校名称",
+      school_en: "School Name",
+      degree_zh: "专业名称",
+      degree_en: "Degree / Major",
+      location:  "City, Country",
+    },
+    */
+  ],
+
+  /* —— 荣誉奖项 —— 复制 { } 块新增 */
+  awards: [
+    /* 示例：
+    {
+      year:    "2024",
+      title_zh: "奖项名称",
+      title_en: "Award Title",
+      org_zh:  "颁发机构",
+      org_en:  "Organization",
+    },
+    */
+  ],
+
   /* —— 技能 —— 在每个分类的 [] 里加 "技能名", 用逗号隔开 */
   skills: {                   
     "Programming":           ["Python", "Java", "C", "R"],
@@ -126,17 +166,18 @@ const DATA = {
   ],
 
   /* —— 作品集 / 照片画廊 ——————————————————
-     image: 图片文件名，把图片和 index.html 放在同一文件夹
-            留空则显示占位符
+     images: 图片文件名数组，可放多张，第一张作为封面
+             [ "pic1.jpg", "pic2.jpg", "pic3.jpg" ]
+             留空数组 [] 则显示占位符
      title_zh/en: 标题
-     desc_zh/en:  点击照片后右侧显示的文字描述
+     desc_zh/en:  灯箱右侧显示的描述文字
      cat:  分类标签（自由填写）
      link: 可选外部链接，留空则无
      新增作品：复制一个 { } 块粘贴进来
   ———————————————————————————————————————— */
   works: [
     {
-      image:    "",         /* 图片文件名，如 "nature.jpg" */
+      images:   [],         /* 放多张：["nature1.jpg", "nature2.jpg", "nature3.jpg"] */
       cat:      "摄影",
       title_zh: "我与自然",
       title_en: "Nature & I",
@@ -145,7 +186,7 @@ const DATA = {
       link:     "",
     },
     {
-      image:    "",         /* 图片文件名，如 "story.jpg" */
+      images:   [],         /* 放多张：["story1.jpg", "story2.jpg"] */
       cat:      "故事",
       title_zh: "故事系列",
       title_en: "Story Series",
@@ -155,7 +196,7 @@ const DATA = {
     },
     /* 新增作品示例：
     {
-      image:    "photo.jpg",
+      images:   ["photo1.jpg", "photo2.jpg"],
       cat:      "摄影",
       title_zh: "作品名称",
       title_en: "Title",
@@ -366,6 +407,10 @@ nav{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:cente
 .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:background .2s}
 .lb-prev{left:16px}.lb-next{right:16px}
 .lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.22)}
+.lb-dots{display:flex;gap:6px;justify-content:center;margin-top:14px;flex-shrink:0}
+.lb-dot{width:5px;height:5px;border-radius:50%;background:#d2d2d7;border:none;cursor:pointer;padding:0;transition:all .2s}
+.lb-dot.active{background:#1d1d1f;transform:scale(1.3)}
+.lb-counter{font-size:11px;letter-spacing:.08em;color:#b0b0b8;margin-top:10px;text-align:center;flex-shrink:0}
 @media(max-width:700px){
   .lb-inner{flex-direction:column;max-height:95vh}
   .lb-info{width:100%;padding:20px 24px}
@@ -421,7 +466,7 @@ body.en .zh{display:none!important}
   .port-grid{grid-template-columns:1fr}
   .soc-grid{grid-template-columns:1fr}
   .story-item{grid-template-columns:1fr;gap:6px}
-  #flights{padding:16px 0 12px!important;margin:0 40px!important;border-radius:12px!important}
+  #flights{padding:16px 0 12px!important;margin:0 60px!important;border-radius:12px!important}
   footer{padding:24px 20px;flex-direction:column;gap:6px}
 }
 </style>
@@ -443,6 +488,8 @@ body.en .zh{display:none!important}
         查看链接
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       </a>
+      <div class="lb-dots" id="lb-dots"></div>
+      <div class="lb-counter" id="lb-counter"></div>
     </div>
   </div>
 </div>
@@ -461,6 +508,8 @@ body.en .zh{display:none!important}
   <div class="nav-logo">Yolanda Wang</div>
   <ul class="nav-links">
     <li><a href="#about" class="zh">关于</a><a href="#about" class="en">About</a></li>
+    <li><a href="#education" class="zh">教育</a><a href="#education" class="en">Education</a></li>
+    <li><a href="#awards" class="zh">荣誉</a><a href="#awards" class="en">Awards</a></li>
     <li><a href="#skills" class="zh">技能</a><a href="#skills" class="en">Skills</a></li>
     <li><a href="#story" class="zh">故事</a><a href="#story" class="en">Story</a></li>
     <li><a href="#portfolio" class="zh">作品</a><a href="#portfolio" class="en">Works</a></li>
@@ -487,6 +536,26 @@ body.en .zh{display:none!important}
     <p class="hero-story zh" id="story-zh"></p>
     <p class="hero-story en" id="story-en"></p>
   </div>
+</div>
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<div class="sec" id="education">
+  <div class="sec-label fu">Education</div>
+  <h2 class="sec-title fu zh">教育经历</h2>
+  <h2 class="sec-title fu en">Education</h2>
+  <div class="edu-scroll-wrap">
+    <div class="edu-timeline" id="edu-render"></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- AWARDS -->
+<div class="sec" id="awards">
+  <div class="sec-label fu">Honours & Awards</div>
+  <h2 class="sec-title fu zh">荣誉奖项</h2>
+  <h2 class="sec-title fu en">Honours & Awards</h2>
+  <div class="awards-list" id="awards-render"></div>
 </div>
 <div class="divider"></div>
 
@@ -531,7 +600,7 @@ body.en .zh{display:none!important}
 <div class="divider"></div>
 
 <!-- FLIGHTS -->
-<div id="flights" style="background:#07091a;padding:20px 0 16px;position:relative;overflow:hidden;border-radius:16px;margin:0 120px">
+<div id="flights" style="background:#07091a;padding:20px 0 16px;position:relative;overflow:hidden;border-radius:16px;margin:0 180px">
   <div style="max-width:1100px;margin:0 auto;padding:0 24px">
     <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4a5280;margin-bottom:10px">Flights</div>
     <h2 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;letter-spacing:-.01em;color:#fff;margin-bottom:4px;line-height:1.1">
@@ -583,6 +652,70 @@ body.en .zh{display:none!important}
 /* ── 渲染函数 ── */
 function render() {
   const isEn = document.body.classList.contains('en');
+
+  /* awards */
+  const awardsWrap = document.getElementById('awards-render');
+  if(awardsWrap && DATA.awards){
+    if(DATA.awards.length === 0){
+      awardsWrap.innerHTML = '<div class="award-empty zh">暂无奖项</div><div class="award-empty en">No awards yet</div>';
+    } else {
+      awardsWrap.innerHTML = DATA.awards.map((a,i) => `
+        <div class="award-item" style="transition-delay:${i*0.08}s">
+          <div class="award-year">${a.year}</div>
+          <div class="award-body">
+            <div class="award-title">${isEn ? a.title_en : a.title_zh}</div>
+            <div class="award-org">${isEn ? a.org_en : a.org_zh}</div>
+          </div>
+        </div>`).join('');
+      setTimeout(()=>{
+        const ob = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
+        },{threshold:.15});
+        document.querySelectorAll('.award-item').forEach(el=>ob.observe(el));
+      },50);
+    }
+  }
+
+  /* education */
+  const eduWrap = document.getElementById('edu-render');
+  if(eduWrap && DATA.education){
+    eduWrap.innerHTML = DATA.education.map((e,i) => `
+      <div class="edu-item" style="transition-delay:${i*0.12}s">
+        <div class="edu-dot"></div>
+        <div class="edu-year">${e.year}<span> — ${isEn ? e.end_en : e.end}</span></div>
+        <div class="edu-school">${isEn ? e.school_en : e.school}</div>
+        <div class="edu-degree">${isEn ? e.degree_en : e.degree_zh}</div>
+        <div class="edu-location">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M5 1C3.343 1 2 2.343 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z" stroke="#b0b0b8" stroke-width=".8"/>
+            <circle cx="5" cy="4" r="1" fill="#b0b0b8"/>
+          </svg>
+          ${e.location}
+        </div>
+      </div>`).join('');
+
+    /* 滚动进入动画 */
+    setTimeout(()=>{
+      const items = document.querySelectorAll('.edu-item');
+      const ob = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
+      },{threshold:.15});
+      items.forEach(el => ob.observe(el));
+    }, 50);
+
+    /* 鼠标拖拽横向滚动 */
+    const tl = eduWrap;
+    let isDown=false, startX=0, scrollLeft=0;
+    tl.addEventListener('mousedown', e=>{ isDown=true; startX=e.pageX-tl.offsetLeft; scrollLeft=tl.scrollLeft; });
+    tl.addEventListener('mouseleave',()=>isDown=false);
+    tl.addEventListener('mouseup',  ()=>isDown=false);
+    tl.addEventListener('mousemove', e=>{
+      if(!isDown) return;
+      e.preventDefault();
+      const x=e.pageX-tl.offsetLeft;
+      tl.scrollLeft=scrollLeft-(x-startX)*1.2;
+    });
+  }
 
   /* bio */
   const ez = document.getElementById('eyebrow-zh'); ez.textContent = DATA.bio.eyebrow_zh; ez.style.display = DATA.bio.eyebrow_zh ? '' : 'none';
@@ -683,12 +816,20 @@ function render() {
 }
 
 /* ── Lightbox ── */
-let lbIndex = 0;
-const lbWorks = () => DATA.works;
+let lbIndex = 0;      // 当前作品索引
+let lbImgIndex = 0;   // 当前作品内的图片索引
 const isEn = () => document.body.classList.contains('en');
+
+function getImages(w) {
+  // 兼容新的 images[] 和旧的 image 字段
+  if (w.images && w.images.length) return w.images;
+  if (w.image) return [w.image];
+  return [];
+}
 
 function openLightbox(i) {
   lbIndex = i;
+  lbImgIndex = 0;
   renderLightbox();
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -697,33 +838,83 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+/* 作品间切换（←→按钮） */
 function lbNav(dir) {
-  const works = lbWorks();
-  lbIndex = (lbIndex + dir + works.length) % works.length;
+  lbIndex = (lbIndex + dir + DATA.works.length) % DATA.works.length;
+  lbImgIndex = 0;
   renderLightbox();
 }
+
+/* 作品内图片切换 */
+function lbImgNav(dir) {
+  const imgs = getImages(DATA.works[lbIndex]);
+  lbImgIndex = (lbImgIndex + dir + imgs.length) % imgs.length;
+  renderLightbox();
+}
+
+function lbGoImg(i) {
+  lbImgIndex = i;
+  renderLightbox();
+}
+
 function renderLightbox() {
-  const w = lbWorks()[lbIndex];
+  const w = DATA.works[lbIndex];
   const en = isEn();
-  /* 图片 */
+  const imgs = getImages(w);
+  const total = imgs.length;
+
+  /* 图片区 */
   const imgWrap = document.getElementById('lb-img-wrap');
-  imgWrap.innerHTML = w.image
-    ? `<img src="${w.image}" alt="${en ? w.title_en : w.title_zh}">`
-    : `<div class="lb-img-ph">暂无图片 · No image</div>`;
+  if (total > 0) {
+    imgWrap.innerHTML = `
+      <img src="${imgs[lbImgIndex]}" alt="${en ? w.title_en : w.title_zh}" style="transition:opacity .25s ease">
+      ${total > 1 ? `
+        <button onclick="lbImgNav(-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.45);border:none;cursor:pointer;color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.7)'" onmouseout="this.style.background='rgba(0,0,0,.45)'">‹</button>
+        <button onclick="lbImgNav(1)"  style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.45);border:none;cursor:pointer;color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.7)'" onmouseout="this.style.background='rgba(0,0,0,.45)'">›</button>
+      ` : ''}`;
+    imgWrap.style.position = 'relative';
+  } else {
+    imgWrap.innerHTML = `<div class="lb-img-ph">暂无图片 · No image</div>`;
+  }
+
   /* 文字 */
   document.getElementById('lb-cat').textContent = w.cat || '';
   document.getElementById('lb-title').textContent = en ? w.title_en : w.title_zh;
   document.getElementById('lb-desc').textContent = en ? w.desc_en : w.desc_zh;
+
   /* 链接 */
   const lnk = document.getElementById('lb-link');
   if (w.link) { lnk.href = w.link; lnk.style.display = 'inline-flex'; }
   else { lnk.style.display = 'none'; }
+
+  /* 小圆点指示器（超过5张改用数字） */
+  const dots = document.getElementById('lb-dots');
+  const counter = document.getElementById('lb-counter');
+  if (total > 1) {
+    if (total <= 8) {
+      dots.innerHTML = Array.from({length: total}, (_,i) =>
+        `<button class="lb-dot${i===lbImgIndex?' active':''}" onclick="lbGoImg(${i})"></button>`
+      ).join('');
+      dots.style.display = 'flex';
+      counter.style.display = 'none';
+    } else {
+      dots.style.display = 'none';
+      counter.textContent = `${lbImgIndex + 1} / ${total}`;
+      counter.style.display = 'block';
+    }
+  } else {
+    dots.style.display = 'none';
+    counter.style.display = 'none';
+  }
 }
-/* 键盘操控 */
+
+/* 键盘：← → 切图片，shift+←→ 切作品，Esc关闭 */
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
-  if (e.key === 'ArrowLeft')  lbNav(-1);
-  if (e.key === 'ArrowRight') lbNav(1);
+  const imgs = getImages(DATA.works[lbIndex]);
+  if (e.key === 'ArrowLeft')  { if(imgs.length>1) lbImgNav(-1); else lbNav(-1); }
+  if (e.key === 'ArrowRight') { if(imgs.length>1) lbImgNav(1);  else lbNav(1); }
   if (e.key === 'Escape')     closeLightbox();
 });
 
