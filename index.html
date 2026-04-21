@@ -72,26 +72,29 @@ const DATA = {
   stories: [
     {
       date_zh:  "2026.4 — 至今",
-      date_en:  "2023 — Present",
+      date_en:  "2026.4 — Present",
       place:    "公司 / 项目名称",
+      city:     "",
       role_zh:  "后端维护",
-      role_en:  "Title / Role",
+      role_en:  "Backend Maintenance",
       desc_zh:  "懵逼树上懵逼果",
       desc_en:  "Write your story here.",
-    },    
+    },
     {
       date_zh:  "2025.2 — 至今",
       date_en:  "2025.2 — Present",
       place:    "自雇",
+      city:     "悉尼",
       role_zh:  "退租纠纷处理",
-      role_en:  "Title / Role",
+      role_en:  "Tenancy Dispute Resolution",
       desc_zh:  "熟悉NSW Tenancy Act 2010， 熟悉fair trading流程，擅长与中介argue及协调多方利益。处理的一套3binvolve5个人，最后协调清楚房租、bond、清洁费、租期，达到满意结果",
       desc_en:  "Write your story here.",
-    },    
+    },
     {
       date_zh:  "2024.10 — 至今",
       date_en:  "2024.10 — Present",
-      place:    "Puppuccino Pet Spa 悉尼",
+      place:    "Puppuccino Pet Spa",
+      city:     "悉尼",
       role_zh:  "职位 / 角色",
       role_en:  "Title / Role",
       desc_zh:  "洗狗，吹狗，修剪狗，应付难缠的客人和老板，拿着报表算老板利润率",
@@ -101,6 +104,7 @@ const DATA = {
       date_zh:  "2020 — 至今",
       date_en:  "2020 — Present",
       place:    "自雇",
+      city:     "",
       role_zh:  "留学经验分享 / 申请支持",
       role_en:  "Study Abroad Mentoring",
       desc_zh:  "分享留学经验，帮人解答英国初高中、本科及签证申请等问题。对不同国家的学习与生活模式有整体了解，熟悉英国初高中的具体情况。从自己的经历出发，描述国外校园的生活、学习上的卡点和实际适应中的困难，及当时我的想法和判断。最长一个case跟了三年，从他还在国内读初中，到后来出国，现在快要上高中了。我们到现在也还是会每隔几个月聊一聊catch up。",
@@ -108,35 +112,39 @@ const DATA = {
     },
     {
       date_zh:  "2026.2 — 2026.2",
-      date_en:  "2023 — Present",
+      date_en:  "2026.2 — 2026.2",
       place:    "连城紫阳书院",
+      city:     "福建",
       role_zh:  "民宿管家",
-      role_en:  "Title / Role",
+      role_en:  "Guest Relations",
       desc_zh:  "接待客人，办理入住，打扫客房",
       desc_en:  "Write your story here.",
     },
     {
       date_zh:  "2025.10 — 2025.10",
       date_en:  "2025.10 — 2025.10",
-      place:    "Serendipity尚禧 悉尼",
+      place:    "Serendipity 尚禧",
+      city:     "悉尼",
       role_zh:  "婚纱店模特",
-      role_en:  "Title / Role",
+      role_en:  "Bridal Model",
       desc_zh:  "试穿婚纱然后拍，探讨时尚",
       desc_en:  "Write your story here.",
-    },    
+    },
     {
       date_zh:  "2025.7 — 2025.7",
       date_en:  "2025.7 — 2025.7",
-      place:    "信永中和会计师事务所 厦门",
+      place:    "信永中和会计师事务所",
+      city:     "厦门",
       role_zh:  "审计实习生",
-      role_en:  "Title / Role",
+      role_en:  "Audit Intern",
       desc_zh:  "核对报表、熟悉审计报表及用于格式",
       desc_en:  "Write your story here.",
-    },    
+    },
     {
       date_zh:  "2025.3 — 2025.3",
-      date_en:  "2025.3 — 2025.3 悉尼",
+      date_en:  "2025.3 — 2025.3",
       place:    "悉尼歌剧院",
+      city:     "悉尼",
       role_zh:  "职位 / 角色",
       role_en:  "Title / Role",
       desc_zh:  "合作愉快",
@@ -145,18 +153,20 @@ const DATA = {
     {
       date_zh:  "2025.1 — 2025.1",
       date_en:  "2025.1 — 2025.1",
-      place:    "安发（福建）生物科技有限公司 宁德",
+      place:    "安发（福建）生物科技有限公司",
+      city:     "宁德",
       role_zh:  "运营维护",
-      role_en:  "Title / Role",
+      role_en:  "IT Operations",
       desc_zh:  "接网线、检查机房",
       desc_en:  "Write your story here.",
     },
     {
       date_zh:  "2021.9 — 2024.6",
       date_en:  "2021.9 — 2024.6",
-      place:    "2021.9 - 2022.6在Polydemia, Oxford，后自雇",
-      role_zh:  "GCSE&ALEVEL Math and Physics Tutor",
-      role_en:  "Title / Role",
+      place:    "Polydemia / 自雇",
+      city:     "Oxford · 远程",
+      role_zh:  "GCSE & A-Level 数理家教",
+      role_en:  "Math & Physics Tutor",
       desc_zh:  "教人物理和数学",
       desc_en:  "Write your story here.",
     },
@@ -466,6 +476,87 @@ body.en .zh{display:none!important}
   #flights{padding:16px 0 12px!important;margin:0 60px!important;border-radius:12px!important}
   footer{padding:24px 20px;flex-direction:column;gap:6px}
 }
+
+/* EDUCATION TIMELINE — 横向 */
+.edu-scroll-wrap{
+  position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 7%,#000 93%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 7%,#000 93%,transparent 100%);
+}
+.edu-timeline{
+  display:flex;align-items:flex-start;
+  overflow-x:auto;overflow-y:visible;
+  padding:24px 10% 40px;
+  cursor:grab;gap:0;
+  scrollbar-width:none;-ms-overflow-style:none;
+  position:relative;
+}
+.edu-timeline::-webkit-scrollbar{display:none}
+.edu-timeline:active{cursor:grabbing}
+.edu-item{
+  position:relative;flex-shrink:0;
+  width:240px;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;
+  opacity:0;transform:translateY(14px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.edu-item.on{opacity:1;transform:translateY(0)}
+.edu-item:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  top:24px;
+  left:calc(50% + 8px);
+  right:calc(-50% + 8px);
+  height:1px;
+  background:linear-gradient(to right,#d2d2d7,#e8e8ed);
+  z-index:0;
+}
+.edu-top{
+  display:flex;flex-direction:column;align-items:center;
+  margin-bottom:18px;position:relative;z-index:1;
+}
+.edu-year{
+  font-size:10px;letter-spacing:.12em;color:#b0b0b8;
+  margin-bottom:10px;font-variant-numeric:tabular-nums;
+  text-transform:uppercase;
+}
+.edu-year span{color:#6e6e73}
+.edu-dot{
+  width:13px;height:13px;border-radius:50%;
+  background:#fff;border:1.5px solid #1d1d1f;
+  transition:background .25s,transform .3s;
+  box-shadow:0 0 0 4px #fff;
+}
+.edu-item:hover .edu-dot{background:#1d1d1f;transform:scale(1.2)}
+.edu-body{padding:0 12px}
+.edu-school{
+  font-family:'Playfair Display',serif;
+  font-size:15px;font-weight:700;letter-spacing:-.01em;
+  color:#1d1d1f;margin-bottom:5px;line-height:1.3;
+}
+.edu-degree{
+  font-size:12px;color:#6e6e73;font-weight:300;
+  margin-bottom:4px;line-height:1.55;
+}
+.edu-location{
+  font-size:10px;letter-spacing:.06em;color:#b0b0b8;
+  display:flex;align-items:center;justify-content:center;gap:3px;
+}
+
+/* STORY CITY */
+.story-city{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:5px;
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:12px;font-weight:400;
+  color:#b0b0b8;letter-spacing:.02em;
+}
+.story-city::before{
+  content:'';display:inline-block;
+  width:14px;height:1px;
+  background:#d2d2d7;flex-shrink:0;
+}
 </style>
 </head>
 <body class="zh">
@@ -678,16 +769,20 @@ function render() {
   if(eduWrap && DATA.education){
     eduWrap.innerHTML = DATA.education.map((e,i) => `
       <div class="edu-item" style="transition-delay:${i*0.12}s">
-        <div class="edu-dot"></div>
-        <div class="edu-year">${e.year}<span> — ${isEn ? e.end_en : e.end}</span></div>
-        <div class="edu-school">${isEn ? e.school_en : e.school}</div>
-        <div class="edu-degree">${isEn ? e.degree_en : e.degree_zh}</div>
-        <div class="edu-location">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M5 1C3.343 1 2 2.343 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z" stroke="#b0b0b8" stroke-width=".8"/>
-            <circle cx="5" cy="4" r="1" fill="#b0b0b8"/>
-          </svg>
-          ${e.location}
+        <div class="edu-top">
+          <div class="edu-year">${e.year}<span> — ${isEn ? e.end_en : e.end}</span></div>
+          <div class="edu-dot"></div>
+        </div>
+        <div class="edu-body">
+          <div class="edu-school">${isEn ? e.school_en : e.school}</div>
+          <div class="edu-degree">${isEn ? e.degree_en : e.degree_zh}</div>
+          <div class="edu-location">
+            <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+              <path d="M5 1C3.343 1 2 2.343 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z" stroke="#c0c0c8" stroke-width=".8"/>
+              <circle cx="5" cy="4" r="1" fill="#c0c0c8"/>
+            </svg>
+            ${e.location}
+          </div>
         </div>
       </div>`).join('');
 
@@ -738,6 +833,7 @@ function render() {
             <div>
               <div class="story-date">${isEn ? s.date_en : s.date_zh}</div>
               <div class="story-place">${s.place}</div>
+              ${s.city ? `<div class="story-city">${s.city}</div>` : ''}
             </div>
             <div>
               <div class="story-role">${isEn ? s.role_en : s.role_zh}</div>
