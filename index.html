@@ -704,6 +704,7 @@ body.en .zh{display:none!important}
 .bcard-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .bcard:hover .bcard-cover img{transform:scale(1.04)}
 .bcard-cover-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#e8e8ed}
+.bcard.no-cover .bcard-cover{display:none}
 .bcard-body{padding:20px 22px 24px}
 .bcard-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .bcard-tag{font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:#f5f5f7;color:#6e6e73;border:1px solid #e8e8ed}
@@ -1043,11 +1044,9 @@ function render() {
       const tag     = isEn ? b.tag_en     : b.tag_zh;
       const date    = isEn ? b.date_en    : b.date_zh;
       const readTxt = isEn ? 'Read →' : '阅读全文 →';
-      const coverHTML = b.cover
-        ? `<img src="${b.cover}" alt="${title}">`
-        : `<div class="bcard-cover-ph">${String(i+1).padStart(2,'0')}</div>`;
-      return `<a href="${b.link||'#'}" class="bcard"${!b.link?' onclick="return false"':' target="_blank"'}>
-        <div class="bcard-cover">${coverHTML}</div>
+      const hasCover = !!b.cover;
+      return `<a href="${b.link||'#'}" class="bcard${hasCover?'':' no-cover'}"${!b.link?' onclick="return false"':' target="_blank"'}>
+        ${hasCover ? `<div class="bcard-cover"><img src="${b.cover}" alt="${title}"></div>` : ''}
         <div class="bcard-body">
           <div class="bcard-meta"><span class="bcard-tag">${tag}</span><span class="bcard-date">${date}</span></div>
           <div class="bcard-title">${title}</div>
