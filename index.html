@@ -228,7 +228,7 @@ const DATA = {
 
      {
        folder:   "nature",
-       images:   ["DSC001.jpg", "IMG_4521.jpg", "sunset.jpg"],
+       images:   ["147162.jpg", "147165.jpg", "147167.jpg", "147168.jpg", "147172.jpg", "147176.jpg", "147185.jpg", "147206.jpg", "147219.jpg"],
        cat:      "摄影",
        title_zh: "我与自然",
        ...
@@ -255,7 +255,7 @@ const DATA = {
     },
     {
       folder:   "nature",           /* 文件夹名，照片放在 nature/ 目录下 */
-      images:   [],                 /* 跑 scan.py 后自动填好 */
+      images:   ["147162.jpg", "147165.jpg", "147167.jpg", "147168.jpg", "147172.jpg", "147176.jpg", "147185.jpg", "147206.jpg", "147219.jpg"],                 /* 跑 scan.py 后自动填好 */
       cat:      "摄影",
       title_zh: "自然之息",
       title_en: "Breath of Nature",
@@ -1317,7 +1317,7 @@ function getLbData() {
 
 function getImages(w) {
   // 支持三种写法：
-  // 1. folder + images:  { folder:"nature", images:["a.jpg","b.jpg"] }  → ["nature/a.jpg","nature/b.jpg"]
+  // 1. folder + images:  { folder:"nature", images:["147162.jpg", "147165.jpg", "147167.jpg", "147168.jpg", "147172.jpg", "147176.jpg", "147185.jpg", "147206.jpg", "147219.jpg"] }  → ["nature/a.jpg","nature/b.jpg"]
   // 2. 纯 images 数组:   { images:["nature/a.jpg"] }
   // 3. 旧版单张:          { image:"photo.jpg" }
   if (w.folder && w.images && w.images.length)
