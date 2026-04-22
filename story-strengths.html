@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的优点 · 王彦淳</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff;color:#1d1d1f;font-family:'Noto Sans SC',-apple-system,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:14px;color:#1d1d1f;text-decoration:none}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:12px;color:#6e6e73;text-decoration:none;transition:color .2s}
+.nav-back:hover{color:#1d1d1f}
+.nav-back svg{transition:transform .2s}
+.nav-back:hover svg{transform:translateX(-3px)}
+
+/* HERO */
+.story-hero{max-width:720px;margin:0 auto;padding:80px 48px 56px}
+.story-tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#b0b0b8;margin-bottom:16px}
+.story-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-.02em;color:#1d1d1f;line-height:1.1;margin-bottom:20px}
+.story-meta{display:flex;align-items:center;gap:16px;font-size:12px;color:#b0b0b8;letter-spacing:.04em}
+.story-meta-dot{width:3px;height:3px;border-radius:50%;background:#d2d2d7}
+.story-intro{margin-top:32px;font-size:16px;line-height:1.9;color:#3d3d3f;font-weight:300;border-left:2px solid #f0f0f2;padding-left:20px}
+
+/* DIVIDER */
+.story-divider{height:1px;background:#f0f0f2;max-width:720px;margin:0 auto}
+
+/* BODY */
+.story-body{max-width:720px;margin:0 auto;padding:56px 48px 100px}
+
+/* 分类标题 */
+.cat-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#b0b0b8;margin:52px 0 20px;display:flex;align-items:center;gap:12px}
+.cat-label::after{content:'';flex:1;height:1px;background:#f0f0f2}
+.cat-label:first-child{margin-top:0}
+
+/* 条目列表 */
+.strength-list{display:grid;gap:0}
+.strength-item{display:grid;grid-template-columns:32px 1fr;gap:0 16px;padding:13px 0;border-bottom:1px solid #f8f8fa;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+.strength-item.on{opacity:1;transform:translateY(0)}
+.strength-num{font-size:11px;color:#d2d2d7;letter-spacing:.04em;padding-top:2px;font-variant-numeric:tabular-nums}
+.strength-text{font-size:15px;line-height:1.75;color:#1d1d1f;font-weight:300}
+.strength-item:last-child{border-bottom:none}
+
+/* 结尾 */
+.story-end{margin-top:64px;padding-top:40px;border-top:1px solid #f0f0f2;text-align:center}
+.story-end-text{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#6e6e73;line-height:1.7}
+.back-btn{display:inline-flex;align-items:center;gap:8px;margin-top:32px;padding:12px 28px;border:1px solid #d2d2d7;border-radius:980px;font-size:12px;letter-spacing:.06em;color:#6e6e73;text-decoration:none;transition:all .2s}
+.back-btn:hover{border-color:#1d1d1f;color:#1d1d1f}
+
+@media(max-width:680px){
+  nav{padding:0 20px}
+  .story-hero{padding:60px 20px 40px}
+  .story-body{padding:40px 20px 80px}
+  .story-divider{margin:0 20px}
+  .strength-text{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Yolanda Wang</a>
+  <a href="index.html#blog" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="#6e6e73" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    故事系列
+  </a>
+</nav>
+
+<div class="story-hero">
+  <div class="story-tag">Stories · 关于我</div>
+  <h1 class="story-title">我的优点</h1>
+  <div class="story-meta">
+    <span>王彦淳</span>
+    <span class="story-meta-dot"></span>
+    <span>2025</span>
+    <span class="story-meta-dot"></span>
+    <span>100 条</span>
+  </div>
+  <p class="story-intro">
+    写这份清单，不是为了说服任何人，也不是表演自信。只是因为我觉得，一个人应该知道自己有什么。这是我目前所知道的关于我自己的好的部分。
+  </p>
+</div>
+
+<div class="story-divider"></div>
+
+<div class="story-body">
+
+  <div class="cat-label">内在</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">01</span><span class="strength-text">我直觉敏锐</span></div>
+    <div class="strength-item"><span class="strength-num">02</span><span class="strength-text">我有灵性</span></div>
+    <div class="strength-item"><span class="strength-num">03</span><span class="strength-text">我诚实地面对自己</span></div>
+    <div class="strength-item"><span class="strength-num">04</span><span class="strength-text">我构建了独属于自己的观念和方式</span></div>
+    <div class="strength-item"><span class="strength-num">05</span><span class="strength-text">我的精神世界很丰富、自由</span></div>
+    <div class="strength-item"><span class="strength-num">06</span><span class="strength-text">我的世界很广阔</span></div>
+    <div class="strength-item"><span class="strength-num">07</span><span class="strength-text">我保持开放性</span></div>
+    <div class="strength-item"><span class="strength-num">08</span><span class="strength-text">我接受新东西的速度很快</span></div>
+    <div class="strength-item"><span class="strength-num">09</span><span class="strength-text">我听建议，但不听评判</span></div>
+    <div class="strength-item"><span class="strength-num">10</span><span class="strength-text">我有自己的标准</span></div>
+    <div class="strength-item"><span class="strength-num">11</span><span class="strength-text">我很坦然</span></div>
+    <div class="strength-item"><span class="strength-num">12</span><span class="strength-text">我很勇敢</span></div>
+    <div class="strength-item"><span class="strength-num">13</span><span class="strength-text">我很自信</span></div>
+    <div class="strength-item"><span class="strength-num">14</span><span class="strength-text">我不屈服于命运，跳出既定的框架</span></div>
+    <div class="strength-item"><span class="strength-num">15</span><span class="strength-text">我不随波逐流</span></div>
+  </div>
+
+  <div class="cat-label">表达与感知</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">16</span><span class="strength-text">我追求表达的精确和严谨</span></div>
+    <div class="strength-item"><span class="strength-num">17</span><span class="strength-text">我能给人带来新的启发</span></div>
+    <div class="strength-item"><span class="strength-num">18</span><span class="strength-text">我有创造力</span></div>
+    <div class="strength-item"><span class="strength-num">19</span><span class="strength-text">我很浪漫</span></div>
+    <div class="strength-item"><span class="strength-num">20</span><span class="strength-text">我保持好奇心和探索欲</span></div>
+    <div class="strength-item"><span class="strength-num">21</span><span class="strength-text">我对色彩的感知敏锐</span></div>
+    <div class="strength-item"><span class="strength-num">22</span><span class="strength-text">我有自己的美学</span></div>
+    <div class="strength-item"><span class="strength-num">23</span><span class="strength-text">我字写得不错</span></div>
+    <div class="strength-item"><span class="strength-num">24</span><span class="strength-text">我热爱自然</span></div>
+    <div class="strength-item"><span class="strength-num">25</span><span class="strength-text">我敬畏生命</span></div>
+  </div>
+
+  <div class="cat-label">身体与生活</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">26</span><span class="strength-text">我喜欢自己的身体</span></div>
+    <div class="strength-item"><span class="strength-num">27</span><span class="strength-text">我笑起来很漂亮</span></div>
+    <div class="strength-item"><span class="strength-num">28</span><span class="strength-text">我做饭好吃</span></div>
+    <div class="strength-item"><span class="strength-num">29</span><span class="strength-text">我有生活常识</span></div>
+    <div class="strength-item"><span class="strength-num">30</span><span class="strength-text">我擅长收拾行李和搬家</span></div>
+    <div class="strength-item"><span class="strength-num">31</span><span class="strength-text">我有广泛的爱好</span></div>
+    <div class="strength-item"><span class="strength-num">32</span><span class="strength-text">我有很多有趣的经历和故事</span></div>
+  </div>
+
+  <div class="cat-label">对他人</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">33</span><span class="strength-text">我很善良</span></div>
+    <div class="strength-item"><span class="strength-num">34</span><span class="strength-text">我很真诚</span></div>
+    <div class="strength-item"><span class="strength-num">35</span><span class="strength-text">我不讨好</span></div>
+    <div class="strength-item"><span class="strength-num">36</span><span class="strength-text">我不贬低别人</span></div>
+    <div class="strength-item"><span class="strength-num">37</span><span class="strength-text">我尽力理解他人和世界</span></div>
+    <div class="strength-item"><span class="strength-num">38</span><span class="strength-text">我看见个体的局限性，不苛求他人</span></div>
+    <div class="strength-item"><span class="strength-num">39</span><span class="strength-text">我尊重他人是复杂和独立的个体</span></div>
+    <div class="strength-item"><span class="strength-num">40</span><span class="strength-text">我（主观）不伤害我爱的人和爱我的人</span></div>
+    <div class="strength-item"><span class="strength-num">41</span><span class="strength-text">我不把痛苦转嫁给他人</span></div>
+    <div class="strength-item"><span class="strength-num">42</span><span class="strength-text">我不感到嫉妒</span></div>
+    <div class="strength-item"><span class="strength-num">43</span><span class="strength-text">我祝福别人</span></div>
+    <div class="strength-item"><span class="strength-num">44</span><span class="strength-text">我喜欢与人交流</span></div>
+    <div class="strength-item"><span class="strength-num">45</span><span class="strength-text">我愿意帮助和接住别人</span></div>
+    <div class="strength-item"><span class="strength-num">46</span><span class="strength-text">我有同理心</span></div>
+    <div class="strength-item"><span class="strength-num">47</span><span class="strength-text">我很包容</span></div>
+    <div class="strength-item"><span class="strength-num">48</span><span class="strength-text">我有爱人的能力</span></div>
+    <div class="strength-item"><span class="strength-num">49</span><span class="strength-text">我爱自己</span></div>
+    <div class="strength-item"><span class="strength-num">50</span><span class="strength-text">我珍惜他人的付出</span></div>
+    <div class="strength-item"><span class="strength-num">51</span><span class="strength-text">我不操纵他人</span></div>
+    <div class="strength-item"><span class="strength-num">52</span><span class="strength-text">我和长辈们保持良好关系</span></div>
+    <div class="strength-item"><span class="strength-num">53</span><span class="strength-text">我懂社交礼节</span></div>
+    <div class="strength-item"><span class="strength-num">54</span><span class="strength-text">我有一群很优秀、很特别、很有意思的朋友</span></div>
+    <div class="strength-item"><span class="strength-num">55</span><span class="strength-text">我获得了很多认可</span></div>
+  </div>
+
+  <div class="cat-label">处境与资源</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">56</span><span class="strength-text">我有独自在任何（主流）国家生存的能力</span></div>
+    <div class="strength-item"><span class="strength-num">57</span><span class="strength-text">我的起点很高</span></div>
+    <div class="strength-item"><span class="strength-num">58</span><span class="strength-text">我物质条件充裕</span></div>
+    <div class="strength-item"><span class="strength-num">59</span><span class="strength-text">我的父母家人爱我，尽他们所能托举我</span></div>
+    <div class="strength-item"><span class="strength-num">60</span><span class="strength-text">我身边的资源丰富，有很多人在支持我、帮助我</span></div>
+    <div class="strength-item"><span class="strength-num">61</span><span class="strength-text">我有自己的人生路径和节奏</span></div>
+  </div>
+
+  <div class="cat-label">行动力</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">62</span><span class="strength-text">我有行动力</span></div>
+    <div class="strength-item"><span class="strength-num">63</span><span class="strength-text">我动手能力强</span></div>
+    <div class="strength-item"><span class="strength-num">64</span><span class="strength-text">我珍惜机会</span></div>
+    <div class="strength-item"><span class="strength-num">65</span><span class="strength-text">我不轻易放弃</span></div>
+    <div class="strength-item"><span class="strength-num">66</span><span class="strength-text">我很坚韧</span></div>
+    <div class="strength-item"><span class="strength-num">67</span><span class="strength-text">我有自我修复能力</span></div>
+    <div class="strength-item"><span class="strength-num">68</span><span class="strength-text">我从错误或失败中学习并持续修正</span></div>
+    <div class="strength-item"><span class="strength-num">69</span><span class="strength-text">我不通过竞争证明自己</span></div>
+    <div class="strength-item"><span class="strength-num">70</span><span class="strength-text">我想活着</span></div>
+    <div class="strength-item"><span class="strength-num">71</span><span class="strength-text">我耐受痛苦并穿行</span></div>
+    <div class="strength-item"><span class="strength-num">72</span><span class="strength-text">我习惯变化</span></div>
+    <div class="strength-item"><span class="strength-num">73</span><span class="strength-text">我战胜困难</span></div>
+    <div class="strength-item"><span class="strength-num">74</span><span class="strength-text">我永远向前</span></div>
+    <div class="strength-item"><span class="strength-num">75</span><span class="strength-text">我不被沉没成本束缚</span></div>
+    <div class="strength-item"><span class="strength-num">76</span><span class="strength-text">我争取我想要的东西</span></div>
+    <div class="strength-item"><span class="strength-num">77</span><span class="strength-text">我不怯场</span></div>
+    <div class="strength-item"><span class="strength-num">78</span><span class="strength-text">我不会被支配</span></div>
+    <div class="strength-item"><span class="strength-num">79</span><span class="strength-text">我敢于做出选择和决定</span></div>
+  </div>
+
+  <div class="cat-label">自律与边界</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">80</span><span class="strength-text">我避免无意义的消耗</span></div>
+    <div class="strength-item"><span class="strength-num">81</span><span class="strength-text">我不冲动消费</span></div>
+    <div class="strength-item"><span class="strength-num">82</span><span class="strength-text">我不浪费食物</span></div>
+    <div class="strength-item"><span class="strength-num">83</span><span class="strength-text">我允许事情不完美</span></div>
+    <div class="strength-item"><span class="strength-num">84</span><span class="strength-text">我在变化的世界中维持自身的稳定</span></div>
+    <div class="strength-item"><span class="strength-num">85</span><span class="strength-text">我在混乱中保持希望和方向感</span></div>
+  </div>
+
+  <div class="cat-label">思维与能力</div>
+  <div class="strength-list">
+    <div class="strength-item"><span class="strength-num">86</span><span class="strength-text">我有洞察力</span></div>
+    <div class="strength-item"><span class="strength-num">87</span><span class="strength-text">我很聪明</span></div>
+    <div class="strength-item"><span class="strength-num">88</span><span class="strength-text">我很理性</span></div>
+    <div class="strength-item"><span class="strength-num">89</span><span class="strength-text">我收集信息的能力很强</span></div>
+    <div class="strength-item"><span class="strength-num">90</span><span class="strength-text">我的逻辑思维强</span></div>
+    <div class="strength-item"><span class="strength-num">91</span><span class="strength-text">我的抽象能力强</span></div>
+    <div class="strength-item"><span class="strength-num">92</span><span class="strength-text">我形成了解决问题的直觉</span></div>
+    <div class="strength-item"><span class="strength-num">93</span><span class="strength-text">我极擅长危机处理，总能把不可能变成可能，逆风翻盘</span></div>
+    <div class="strength-item"><span class="strength-num">94</span><span class="strength-text">我可以承担责任</span></div>
+    <div class="strength-item"><span class="strength-num">95</span><span class="strength-text">我可以把复杂的事表达清楚</span></div>
+    <div class="strength-item"><span class="strength-num">96</span><span class="strength-text">我有规划能力</span></div>
+    <div class="strength-item"><span class="strength-num">97</span><span class="strength-text">我有横跨各领域的工作经验</span></div>
+    <div class="strength-item"><span class="strength-num">98</span><span class="strength-text">我会对冲风险</span></div>
+    <div class="strength-item"><span class="strength-num">99</span><span class="strength-text">我不惧权威</span></div>
+    <div class="strength-item"><span class="strength-num">100</span><span class="strength-text">我可以同时和不同的利益方沟通、周旋</span></div>
+  </div>
+
+  <div class="story-end">
+    <p class="story-end-text">这是目前的版本。<br>还会继续增加。</p>
+    <a href="index.html#blog" class="back-btn">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      返回故事系列
+    </a>
+  </div>
+
+</div>
+
+<script>
+const ob = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('on');
+      // 给同一个list里的条目加延迟
+      const siblings = e.target.parentElement.querySelectorAll('.strength-item');
+      siblings.forEach((el, i) => {
+        setTimeout(() => el.classList.add('on'), i * 40);
+      });
+      ob.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.05});
+
+// 观察每个list的第一个条目
+document.querySelectorAll('.strength-list').forEach(list => {
+  const first = list.querySelector('.strength-item');
+  if(first) ob.observe(first);
+});
+</script>
+</body>
+</html>
