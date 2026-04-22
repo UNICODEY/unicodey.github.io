@@ -98,51 +98,14 @@ const DATA = {
     },
   ],
 
-  /* —— 荣誉奖项 —— 复制 { } 块新增 */
+  /* —— 荣誉奖项 —— school 填对应 school_en */
   awards: [
-    {
-      year:    "2023",
-      title_zh: "BPhO Senior Physics Challenge",
-      title_en: "BPhO Senior Physics Challenge",
-      org_zh:  "Silver Award",
-      org_en:  "Silver Award",
-    },
-    {
-      year:    "2022",
-      title_zh: "British Mathematical Olympiad",
-      title_en: "British Mathematical Olympiad",
-      org_zh:  "Round 1",
-      org_en:  "Round 1",
-    },
-    {
-      year:    "2022",
-      title_zh: "Senior Mathematical Challenge",
-      title_en: "Senior Mathematical Challenge",
-      org_zh:  "Gold Certificate",
-      org_en:  "Gold Certificate",
-    },
-    {
-      year:    "2021",
-      title_zh: "High School Mathematical Contest in Modelling",
-      title_en: "High School Mathematical Contest in Modelling",
-      org_zh:  "Honorable Mention",
-      org_en:  "Honorable Mention",
-    },
-    {
-      year:    "2021",
-      title_zh: "ASDAN ALL-STAR Competition",
-      title_en: "ASDAN ALL-STAR Competition",
-      org_zh:  "Bronze Award",
-      org_en:  "Bronze Award",
-    },
-    {
-      year:    "2020",
-      title_zh: "ASDAN Business Simulation",
-      title_en: "ASDAN Business Simulation",
-      org_zh:  "Silver Award",
-      org_en:  "Silver Award",
-    },
-
+    { year:"2023", school:"Godolphin School",             title_zh:"BPhO Senior Physics Challenge",                  title_en:"BPhO Senior Physics Challenge",                  org_zh:"Silver Award",      org_en:"Silver Award" },
+    { year:"2022", school:"Oxford International College",  title_zh:"British Mathematical Olympiad",                  title_en:"British Mathematical Olympiad",                  org_zh:"Round 1",           org_en:"Round 1" },
+    { year:"2022", school:"Oxford International College",  title_zh:"Senior Mathematical Challenge",                  title_en:"Senior Mathematical Challenge",                  org_zh:"Gold Certificate",  org_en:"Gold Certificate" },
+    { year:"2021", school:"Maple Glory United School",     title_zh:"High School Mathematical Contest in Modelling",  title_en:"High School Mathematical Contest in Modelling",  org_zh:"Honorable Mention", org_en:"Honorable Mention" },
+    { year:"2021", school:"Maple Glory United School",     title_zh:"ASDAN ALL-STAR Competition",                     title_en:"ASDAN ALL-STAR Competition",                     org_zh:"Bronze Award",      org_en:"Bronze Award" },
+    { year:"2020", school:"Roedean School",                title_zh:"ASDAN Business Simulation",                      title_en:"ASDAN Business Simulation",                      org_zh:"Silver Award",      org_en:"Silver Award" },
   ],
 
   /* —— 技能 —— 在每个分类的 [] 里加 "技能名", 用逗号隔开 */
@@ -299,52 +262,17 @@ const DATA = {
     */
   ],
 
-  /* —— 故事系列 —— 每篇对应一个独立 .html 文件
-     link: 填文件名如 "story-uk.html"，留空则不可点击
-     cover: 封面图文件名，留空显示纯色占位
-     复制 { } 块新增
-  ———————————————————————————————————————— */
-  blog: [
-    {
-      cover:      "",
-      date_zh:    "2020",
-      date_en:    "2020",
-      tag_zh:     "留学",
-      tag_en:     "Study Abroad",
-      title_zh:   "15岁，疫情爆发，我怎么从英国回中国",
-      title_en:   "15, Pandemic, Getting Home from the UK",
-      summary_zh: "2020年初，全球边境相继关闭。我独自一人，带着一箱行李和一张改了三次的机票，从英国辗转回国。",
-      summary_en: "Early 2020. Borders were closing. I was alone — one suitcase, a ticket rebooked three times.",
-      link:       "story-pandemic.html",
-    },
-    {
-      cover:      "",
-      date_zh:    "2024",
-      date_en:    "2024",
-      tag_zh:     "成长",
-      tag_en:     "Growing Up",
-      title_zh:   "全女校的那几年，悄悄改变了我什么",
-      title_en:   "What an All-Girls School Quietly Did to Me",
-      summary_zh: "不是关于女权，只是关于一种微妙的自由——被当作一个完整的人看待，不因性别而先被定义。",
-      summary_en: "Not about feminism. About a quiet kind of freedom — being seen as a whole person before anything else.",
-      link:       "story-girlsschool.html",
-    },
-  ],
-
   /* —— 社交链接 —— 把 url 换成你自己的 */
   social: {
-    github:           "https://github.com/",
+    linkedin:  "https://linkedin.com/",
     github_handle:    "@yolanda",
-    xiaohongshu:      "https://www.xiaohongshu.com/",
-    linkedin:         "https://linkedin.com/",
-    instagram:        "https://instagram.com/",
     instagram_handle: "@yolanda",
   },
 
   /* —— 联系方式 —— */
   contact: {
-    email:            "yolanda.chenye@gmail.com",
-    instagram:        "https://instagram.com/",
+    email:   "yolanda.chenye@gmail.com",
+    instagram: "https://instagram.com/",
     instagram_handle: "@yolanda",
   },
 
@@ -664,6 +592,40 @@ body.en .zh{display:none!important}
   display:flex;align-items:center;justify-content:center;gap:3px;
 }
 
+/* 荣誉展开面板 */
+.edu-item{cursor:default}
+.edu-award-toggle{
+  display:inline-flex;align-items:center;gap:4px;
+  margin-top:10px;padding:4px 10px;
+  font-size:10px;letter-spacing:.08em;
+  color:#6e6e73;background:#f5f5f7;border:1px solid #e8e8ed;
+  border-radius:20px;cursor:pointer;user-select:none;
+  transition:background .2s,color .2s;
+}
+.edu-award-toggle:hover{background:#ebebf0;color:#1d1d1f}
+.edu-award-toggle svg{transition:transform .3s;flex-shrink:0}
+.edu-item.award-open .edu-award-toggle svg{transform:rotate(180deg)}
+.edu-award-panel{
+  overflow:hidden;max-height:0;opacity:0;
+  transition:max-height .38s cubic-bezier(.4,0,.2,1),opacity .28s ease,margin .3s ease;
+  margin-top:0;width:100%;
+}
+.edu-item.award-open .edu-award-panel{max-height:320px;opacity:1;margin-top:10px}
+.edu-award-inner{
+  background:#fafafa;border:1px solid #f0f0f2;
+  border-radius:10px;padding:12px 14px;text-align:left;
+}
+.edu-award-row{
+  display:flex;gap:10px;align-items:baseline;
+  padding:7px 0;border-bottom:1px solid #f5f5f7;
+}
+.edu-award-row:last-child{border-bottom:none;padding-bottom:0}
+.edu-award-row:first-child{padding-top:0}
+.edu-award-yr{font-size:10px;color:#b0b0b8;flex-shrink:0;letter-spacing:.04em}
+.edu-award-title{font-size:12px;font-weight:500;color:#1d1d1f;line-height:1.4}
+.edu-award-org{font-size:11px;color:#6e6e73;margin-top:1px}
+.edu-no-award{font-size:11px;color:#c0c0c8;font-style:italic;padding:2px 0}
+
 /* STORY CITY */
 .story-city{
   display:inline-flex;align-items:center;gap:6px;
@@ -677,37 +639,6 @@ body.en .zh{display:none!important}
   width:14px;height:1px;
   background:#d2d2d7;flex-shrink:0;
 }
-
-/* BLOG — 故事系列 */
-.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px}
-.bcard{border-radius:16px;overflow:hidden;background:#fff;border:1px solid #f0f0f2;text-decoration:none;display:block;transition:transform .28s cubic-bezier(.25,.46,.45,.94),box-shadow .28s,border-color .28s}
-.bcard:hover{transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,.07);border-color:#e0e0e5}
-.bcard-cover{width:100%;aspect-ratio:16/9;background:#f5f5f7;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.bcard-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.bcard:hover .bcard-cover img{transform:scale(1.04)}
-.bcard-cover-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#e8e8ed;letter-spacing:-.02em}
-.bcard-body{padding:22px 24px 26px}
-.bcard-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.bcard-tag{font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:#f5f5f7;color:#6e6e73;border:1px solid #e8e8ed}
-.bcard-date{font-size:10px;color:#b0b0b8;letter-spacing:.06em}
-.bcard-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1d1d1f;line-height:1.4;margin-bottom:10px;letter-spacing:-.01em}
-.bcard-summary{font-size:13px;line-height:1.8;color:#6e6e73;font-weight:300}
-.bcard-read{display:inline-flex;align-items:center;gap:5px;margin-top:16px;font-size:11px;letter-spacing:.08em;color:#b0b0b8;transition:color .2s,gap .2s}
-.bcard:hover .bcard-read{color:#1d1d1f;gap:9px}
-@media(max-width:700px){.blog-grid{grid-template-columns:1fr}}
-
-/* FLIGHT MAP — SVG精确版 */
-#flights-section{padding:100px 48px;max-width:1100px;margin:0 auto}
-.flights-header{margin-bottom:32px}
-.flights-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:16px}
-.fstat{display:flex;flex-direction:column;gap:2px}
-.fstat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#1d1d1f;letter-spacing:-.02em}
-.fstat-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b8}
-.flights-map-wrap{position:relative;background:#e8f0fe;border-radius:16px;overflow:hidden;margin-top:32px}
-#flight-svg-map{width:100%;height:auto;display:block}
-.flight-legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px}
-.fl-item{display:flex;align-items:center;gap:7px;font-size:11px;color:#6e6e73;letter-spacing:.06em}
-@media(max-width:860px){#flights-section{padding:72px 20px}.flights-stats{gap:24px}}
 </style>
 </head>
 <body class="zh">
@@ -748,13 +679,11 @@ body.en .zh{display:none!important}
   <ul class="nav-links">
     <li><a href="#about" class="zh">关于</a><a href="#about" class="en">About</a></li>
     <li><a href="#education" class="zh">教育</a><a href="#education" class="en">Education</a></li>
-    <li><a href="#awards" class="zh">荣誉</a><a href="#awards" class="en">Awards</a></li>
     <li><a href="#skills" class="zh">技能</a><a href="#skills" class="en">Skills</a></li>
-    <li><a href="#flights-section" class="zh">航迹</a><a href="#flights-section" class="en">Flights</a></li>
-    <li><a href="#story" class="zh">经历</a><a href="#story" class="en">Story</a></li>
+    <li><a href="#story" class="zh">故事</a><a href="#story" class="en">Story</a></li>
     <li><a href="#portfolio" class="zh">作品</a><a href="#portfolio" class="en">Works</a></li>
-    <li><a href="#blog" class="zh">故事系列</a><a href="#blog" class="en">Stories</a></li>
     <li><a href="#social" class="zh">社交</a><a href="#social" class="en">Social</a></li>
+    <li><a href="#flights" class="zh">航迹</a><a href="#flights" class="en">Flights</a></li>
     <li><a href="#contact" class="zh">联系</a><a href="#contact" class="en">Contact</a></li>
   </ul>
   <button class="lang-btn" onclick="toggleLang()">EN / 中文</button>
@@ -790,44 +719,12 @@ body.en .zh{display:none!important}
 </div>
 <div class="divider"></div>
 
-<!-- AWARDS -->
-<div class="sec" id="awards">
-  <div class="sec-label fu">Honours & Awards</div>
-  <h2 class="sec-title fu zh">荣誉奖项</h2>
-  <h2 class="sec-title fu en">Honours & Awards</h2>
-  <div class="awards-list" id="awards-render"></div>
-</div>
-<div class="divider"></div>
-
 <!-- SKILLS -->
 <div class="sec fu" id="skills">
   <div class="sec-label">Skills</div>
   <h2 class="sec-title zh">技能</h2>
   <h2 class="sec-title en">Skills</h2>
   <div id="skills-render" style="max-width:720px"></div>
-</div>
-<div class="divider"></div>
-
-<!-- FLIGHTS — SVG世界地图，移至技能后 -->
-<div id="flights-section" class="fu">
-  <div class="flights-header">
-    <div class="sec-label">Flights</div>
-    <h2 class="sec-title zh">飞行足迹</h2>
-    <h2 class="sec-title en">Flight Trails</h2>
-    <div class="flights-stats" id="flights-stats-render"></div>
-  </div>
-  <div class="flights-map-wrap">
-    <svg id="flight-svg-map" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-      <!-- 地图由JS动态渲染 -->
-    </svg>
-    <div id="flight-tooltip-svg" style="position:absolute;background:rgba(15,25,60,.92);border:1px solid rgba(100,130,220,.4);border-radius:8px;padding:7px 13px;font-size:12px;color:#c8d8ff;pointer-events:none;display:none;letter-spacing:.04em;white-space:nowrap;backdrop-filter:blur(8px);font-family:'Noto Sans SC',sans-serif"></div>
-  </div>
-  <div class="flight-legend">
-    <div class="fl-item"><svg width="20" height="4"><line x1="0" y1="2" x2="20" y2="2" stroke="url(#lg-intl)" stroke-width="1.5"/><defs><linearGradient id="lg-intl" x1="0" x2="1"><stop offset="0" stop-color="#6080ff"/><stop offset="1" stop-color="#a0b0ff"/></linearGradient></defs></svg><span class="zh">国际航线</span><span class="en">International</span></div>
-    <div class="fl-item"><svg width="20" height="4"><line x1="0" y1="2" x2="20" y2="2" stroke="#60b8ff" stroke-width="1.5"/></svg><span class="zh">国内航线</span><span class="en">Domestic</span></div>
-    <div class="fl-item"><svg width="10" height="10"><circle cx="5" cy="5" r="4" fill="#f5c842"/></svg><span class="zh">主要枢纽</span><span class="en">Hub</span></div>
-    <div class="fl-item"><svg width="10" height="10"><circle cx="5" cy="5" r="3" fill="#a0b8ff" opacity=".8"/></svg><span class="zh">途经城市</span><span class="en">City</span></div>
-  </div>
 </div>
 <div class="divider"></div>
 
@@ -842,23 +739,14 @@ body.en .zh{display:none!important}
 </div>
 <div class="divider"></div>
 
+<div class="divider"></div>
+
 <!-- PORTFOLIO -->
 <div class="sec fu" id="portfolio">
   <div class="sec-label">Works</div>
   <h2 class="sec-title zh">来看我眼里的世界</h2>
   <h2 class="sec-title en">Portfolio</h2>
   <div class="port-grid" id="works-render"></div>
-</div>
-<div class="divider"></div>
-
-<!-- BLOG 故事系列 -->
-<div class="sec fu" id="blog">
-  <div class="sec-label">Stories</div>
-  <h2 class="sec-title zh">故事系列</h2>
-  <h2 class="sec-title en">Story Series</h2>
-  <p class="con-tagline zh">那些太长、太碎、太私人的事，简历装不下，朋友圈也放不了，就放在这里。</p>
-  <p class="con-tagline en">Too long for a résumé, too personal for social media. Here they live.</p>
-  <div class="blog-grid" id="blog-render"></div>
 </div>
 <div class="divider"></div>
 
@@ -869,6 +757,40 @@ body.en .zh{display:none!important}
   <h2 class="sec-title en">Find Me</h2>
   <div class="soc-grid" id="social-render"></div>
 </div>
+<div class="divider"></div>
+
+<!-- FLIGHTS -->
+<div id="flights" style="background:#07091a;padding:20px 0 16px;position:relative;overflow:hidden;border-radius:16px;margin:0 180px">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px">
+    <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4a5280;margin-bottom:10px">Flights</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;letter-spacing:-.01em;color:#fff;margin-bottom:4px;line-height:1.1">
+      <span class="zh">飞行足迹</span><span class="en">Flight Trails</span>
+    </h2>
+    <p style="font-size:11px;color:#4a5280;margin-bottom:10px;letter-spacing:.04em">
+      <span class="zh">147 次航班 · 486,198 km · 54 个机场 · 32 家航空公司</span>
+      <span class="en">147 flights · 486,198 km · 54 airports · 32 airlines</span>
+    </p>
+  </div>
+  <div style="position:relative;width:100%;max-width:1100px;margin:0 auto;padding:0 12px">
+    <canvas id="flight-canvas" style="width:100%;border-radius:12px;display:block;cursor:crosshair"></canvas>
+    <div id="flight-tooltip" style="position:absolute;background:rgba(10,15,40,.92);border:1px solid #2a3060;border-radius:8px;padding:8px 14px;font-size:12px;color:#c8d0f0;pointer-events:none;display:none;letter-spacing:.04em;white-space:nowrap;backdrop-filter:blur(8px)"></div>
+  </div>
+  <div style="max-width:1100px;margin:6px auto 0;padding:0 24px;display:flex;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:#4a5280;letter-spacing:.06em">
+      <div style="width:20px;height:1.5px;background:linear-gradient(to right,#3a4fd4,#a0aaff)"></div>
+      <span class="zh">国际航线</span><span class="en">International</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:#4a5280;letter-spacing:.06em">
+      <div style="width:20px;height:1.5px;background:linear-gradient(to right,#4a9eff,#b0d4ff)"></div>
+      <span class="zh">国内航线</span><span class="en">Domestic</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:#4a5280;letter-spacing:.06em">
+      <div style="width:8px;height:8px;border-radius:50%;background:#f5c842"></div>
+      <span class="zh">途经城市</span><span class="en">Cities</span>
+    </div>
+  </div>
+</div>
+
 <div class="divider"></div>
 
 <!-- CONTACT -->
@@ -891,71 +813,69 @@ body.en .zh{display:none!important}
 function render() {
   const isEn = document.body.classList.contains('en');
 
-  /* awards */
-  const awardsWrap = document.getElementById('awards-render');
-  if(awardsWrap && DATA.awards){
-    if(DATA.awards.length === 0){
-      awardsWrap.innerHTML = '<div class="award-empty zh">暂无奖项</div><div class="award-empty en">No awards yet</div>';
-    } else {
-      awardsWrap.innerHTML = DATA.awards.map((a,i) => `
-        <div class="award-item" style="transition-delay:${i*0.08}s">
-          <div class="award-year">${a.year}</div>
-          <div class="award-body">
-            <div class="award-title">${isEn ? a.title_en : a.title_zh}</div>
-            <div class="award-org">${isEn ? a.org_en : a.org_zh}</div>
-          </div>
-        </div>`).join('');
-      setTimeout(()=>{
-        const ob = new IntersectionObserver(entries=>{
-          entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
-        },{threshold:.15});
-        document.querySelectorAll('.award-item').forEach(el=>ob.observe(el));
-      },50);
-    }
-  }
-
-  /* education */
+  /* education — 横轴，节点下方可展开荣誉 */
   const eduWrap = document.getElementById('edu-render');
   if(eduWrap && DATA.education){
-    eduWrap.innerHTML = DATA.education.map((e,i) => `
-      <div class="edu-item" style="transition-delay:${i*0.12}s">
-        <div class="edu-top">
-          <div class="edu-year">${e.year}<span> — ${isEn ? e.end_en : e.end}</span></div>
-          <div class="edu-dot"></div>
-        </div>
-        <div class="edu-body">
-          <div class="edu-school">${isEn ? e.school_en : e.school}</div>
-          <div class="edu-degree">${isEn ? e.degree_en : e.degree_zh}</div>
-          <div class="edu-location">
-            <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
-              <path d="M5 1C3.343 1 2 2.343 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z" stroke="#c0c0c8" stroke-width=".8"/>
-              <circle cx="5" cy="4" r="1" fill="#c0c0c8"/>
-            </svg>
-            ${e.location}
+    eduWrap.innerHTML = DATA.education.map((e,i) => {
+      const matched = (DATA.awards||[]).filter(a => a.school === e.school_en);
+      const hasAwards = matched.length > 0;
+      const toggleLabel = hasAwards
+        ? (isEn ? `${matched.length} award${matched.length>1?'s':''}` : `${matched.length} 项荣誉`)
+        : (isEn ? 'No awards' : '暂无荣誉');
+      const panelHTML = hasAwards
+        ? matched.map(a=>`
+            <div class="edu-award-row">
+              <div class="edu-award-yr">${a.year}</div>
+              <div>
+                <div class="edu-award-title">${isEn?a.title_en:a.title_zh}</div>
+                <div class="edu-award-org">${isEn?a.org_en:a.org_zh}</div>
+              </div>
+            </div>`).join('')
+        : `<div class="edu-no-award">${isEn?'No awards recorded.':'该时期暂无奖项。'}</div>`;
+      return `
+        <div class="edu-item" style="transition-delay:${i*0.12}s">
+          <div class="edu-top">
+            <div class="edu-year">${e.year}<span> — ${isEn?e.end_en:e.end}</span></div>
+            <div class="edu-dot"></div>
           </div>
-        </div>
-      </div>`).join('');
+          <div class="edu-body">
+            <div class="edu-school">${isEn?e.school_en:e.school}</div>
+            <div class="edu-degree">${isEn?e.degree_en:e.degree_zh}</div>
+            <div class="edu-location">
+              <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+                <path d="M5 1C3.343 1 2 2.343 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z" stroke="#c0c0c8" stroke-width=".8"/>
+                <circle cx="5" cy="4" r="1" fill="#c0c0c8"/>
+              </svg>
+              ${e.location}
+            </div>
+            <div class="edu-award-toggle" onclick="toggleAward(this)">
+              <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M1.5 3.5l3.5 3.5 3.5-3.5" stroke="#6e6e73" stroke-width="1.2" stroke-linecap="round"/></svg>
+              ${toggleLabel}
+            </div>
+            <div class="edu-award-panel">
+              <div class="edu-award-inner">${panelHTML}</div>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
 
-    /* 滚动进入动画 */
     setTimeout(()=>{
       const items = document.querySelectorAll('.edu-item');
-      const ob = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
+      const ob = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
       },{threshold:.15});
-      items.forEach(el => ob.observe(el));
-    }, 50);
+      items.forEach(el=>ob.observe(el));
+    },50);
 
-    /* 鼠标拖拽横向滚动 */
     const tl = eduWrap;
-    let isDown=false, startX=0, scrollLeft=0;
-    tl.addEventListener('mousedown', e=>{ isDown=true; startX=e.pageX-tl.offsetLeft; scrollLeft=tl.scrollLeft; });
+    let isDown=false,startX=0,scrollLeft=0;
+    tl.addEventListener('mousedown',e=>{isDown=true;startX=e.pageX-tl.offsetLeft;scrollLeft=tl.scrollLeft;});
     tl.addEventListener('mouseleave',()=>isDown=false);
-    tl.addEventListener('mouseup',  ()=>isDown=false);
-    tl.addEventListener('mousemove', e=>{
+    tl.addEventListener('mouseup',()=>isDown=false);
+    tl.addEventListener('mousemove',e=>{
       if(!isDown) return;
       e.preventDefault();
-      const x=e.pageX-tl.offsetLeft;
-      tl.scrollLeft=scrollLeft-(x-startX)*1.2;
+      tl.scrollLeft=scrollLeft-(e.pageX-tl.offsetLeft-startX)*1.2;
     });
   }
 
@@ -1016,33 +936,6 @@ function render() {
           <div class="pcard-title">${isEn ? w.title_en : w.title_zh}</div>
         </div>
       </div>`).join('') + soons;
-
-  /* blog 故事系列 */
-  const blogWrap = document.getElementById('blog-render');
-  if(blogWrap && DATA.blog){
-    blogWrap.innerHTML = DATA.blog.map((b,i) => {
-      const title   = isEn ? b.title_en   : b.title_zh;
-      const summary = isEn ? b.summary_en : b.summary_zh;
-      const tag     = isEn ? b.tag_en     : b.tag_zh;
-      const date    = isEn ? b.date_en    : b.date_zh;
-      const readTxt = isEn ? 'Read →' : '阅读全文 →';
-      const coverHTML = b.cover
-        ? `<img src="${b.cover}" alt="${title}">`
-        : `<div class="bcard-cover-ph">${String(i+1).padStart(2,'0')}</div>`;
-      return `<a href="${b.link||'#'}" class="bcard"${!b.link?' onclick="return false"':''}>
-        <div class="bcard-cover">${coverHTML}</div>
-        <div class="bcard-body">
-          <div class="bcard-meta">
-            <span class="bcard-tag">${tag}</span>
-            <span class="bcard-date">${date}</span>
-          </div>
-          <div class="bcard-title">${title}</div>
-          <div class="bcard-summary">${summary}</div>
-          <div class="bcard-read">${readTxt}</div>
-        </div>
-      </a>`;
-    }).join('');
-  }
 
   /* social */
   const sc = DATA.social;
@@ -1188,6 +1081,15 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape')     closeLightbox();
 });
 
+/* 荣誉展开收起 */
+function toggleAward(btn) {
+  const item = btn.closest('.edu-item');
+  const isOpen = item.classList.contains('award-open');
+  /* 关闭所有其他 */
+  document.querySelectorAll('.edu-item.award-open').forEach(el => el.classList.remove('award-open'));
+  if (!isOpen) item.classList.add('award-open');
+}
+
 function toggleLang() {
   const isZh = document.body.classList.contains('zh');
   document.body.className = isZh ? 'en' : 'zh';
@@ -1270,268 +1172,339 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fu').forEach(el => obs.observe(el));
 
 /* ════════════════════════════════════
-   FLIGHT MAP — SVG精确版
+   FLIGHT MAP
 ════════════════════════════════════ */
 (function(){
-  const fd = DATA.flights;
-  const svg = document.getElementById('flight-svg-map');
-  const tooltip = document.getElementById('flight-tooltip-svg');
-  if(!svg) return;
 
-  /* 统计数字 */
-  const statsEl = document.getElementById('flights-stats-render');
-  if(statsEl){
-    const isEn = document.body.classList.contains('en');
-    const labels = isEn
-      ? ['flights','km','airports','airlines']
-      : ['次航班','km','个机场','家航空公司'];
-    statsEl.innerHTML = [
-      [fd.stats.count, labels[0]],
-      [fd.stats.km,    labels[1]],
-      [fd.stats.airports, labels[2]],
-      [fd.stats.airlines, labels[3]],
-    ].map(([n,l])=>`<div class="fstat"><span class="fstat-num">${n}</span><span class="fstat-label">${l}</span></div>`).join('');
-  }
+/* 从 DATA 读取飞行数据 */
+const fd = DATA.flights;
 
-  const W=1000, H=500;
-  /* Mercator投影 */
-  function project(lon,lat){
-    const x=(lon+180)/360*W;
-    const r=lat*Math.PI/180;
-    const mercN=Math.log(Math.tan(Math.PI/4+r/2));
-    const y=H/2-(mercN/(2*Math.PI))*H*1.28+H*0.08;
-    return [x,y];
-  }
+/* 统计数字渲染 */
+const statsEl = document.getElementById('flight-stats');
+if(statsEl){
+  const isEn = document.body.classList.contains('en');
+  statsEl.innerHTML = isEn
+    ? `${fd.stats.count} flights · ${fd.stats.km} km · ${fd.stats.airports} airports · ${fd.stats.airlines} airlines`
+    : `${fd.stats.count} 次航班 · ${fd.stats.km} km · ${fd.stats.airports} 个机场 · ${fd.stats.airlines} 家航空公司`;
+}
 
-  /* 城市索引 */
-  const cityMap={};
-  fd.cities.forEach((c,i)=>cityMap[c.name]=i);
+/* 把城市数组转成 name→index 的查找表 */
+const CITIES = fd.cities.map(c => [c.name, c.lon, c.lat, c.hub]);
+const cityIndex = {};
+fd.cities.forEach((c,i) => cityIndex[c.name] = i);
 
-  /* 大陆轮廓路径 — 使用Natural Earth简化数据 */
-  const LAND_PATHS=[
-    /* 欧洲 */
-    "M-10,36 L-8,38 L-9,40 L-8,42 L-4,44 L0,44 L3,44 L5,44 L8,46 L10,44 L12,44 L14,44 L18,40 L20,38 L24,38 L26,40 L28,42 L30,44 L28,48 L26,52 L24,56 L22,58 L20,58 L18,60 L16,58 L14,56 L12,58 L10,58 L8,56 L6,58 L5,58 L4,52 L2,52 L0,52 L-2,50 L-4,50 L-5,48 L-2,46 L-2,44 L-4,44 L-6,42 L-8,38 Z",
-    /* 斯堪的纳维亚 */
-    "M4,52 L8,56 L10,58 L12,58 L14,56 L14,58 L16,60 L18,62 L20,64 L24,68 L28,70 L28,72 L26,70 L24,70 L22,68 L20,68 L18,66 L16,64 L14,62 L12,60 L10,58 L8,56 L6,56 L5,58 Z",
-    /* 英国爱尔兰 */
-    "M-5,50 L0,51 L2,52 L0,58 L-5,58 Z M-8,52 L-6,50 L-4,52 L-6,54 Z",
-    /* 非洲 */
-    "M-18,15 L-16,12 L-14,10 L-14,8 L-12,6 L-8,5 L0,5 L4,6 L8,4 L8,2 L10,0 L12,-2 L14,-5 L16,-8 L18,-18 L18,-24 L20,-28 L22,-32 L24,-34 L26,-34 L28,-30 L30,-24 L32,-18 L34,-12 L36,-5 L40,0 L42,4 L44,8 L42,12 L40,16 L38,18 L36,22 L38,24 L40,22 L42,16 L44,12 L44,8 L42,4 L40,0 L36,-5 L34,-12 L32,-18 L30,-24 L28,-30 L26,-34 L24,-34 L22,-32 L20,-28 L18,-24 L18,-18 L16,-8 L14,-5 L12,-2 L10,0 L8,2 L8,4 L4,6 L0,5 L-4,6 L-8,5 L-12,6 L-14,8 L-14,10 L-16,12 Z",
-    /* 亚洲主体 */
-    "M25,42 L30,42 L35,38 L38,36 L40,38 L44,38 L48,38 L50,40 L52,40 L54,38 L58,36 L60,36 L62,38 L64,40 L66,40 L68,38 L70,36 L72,36 L72,34 L74,32 L74,30 L72,28 L68,24 L66,24 L64,22 L62,22 L60,22 L60,20 L62,18 L64,16 L66,14 L68,14 L70,16 L72,20 L74,20 L76,16 L78,12 L80,8 L82,8 L84,8 L86,10 L88,10 L90,12 L92,14 L94,18 L96,20 L98,22 L100,22 L100,18 L102,16 L104,12 L106,10 L108,10 L110,12 L110,15 L112,16 L114,18 L116,20 L118,22 L120,22 L122,24 L124,26 L126,28 L128,30 L128,32 L130,34 L132,36 L134,38 L136,40 L138,38 L140,40 L140,42 L138,44 L136,44 L134,44 L132,44 L130,46 L128,48 L126,50 L124,50 L122,48 L120,52 L118,52 L116,50 L114,50 L112,50 L110,48 L106,52 L102,52 L98,52 L94,52 L90,52 L86,52 L82,52 L80,54 L76,54 L72,54 L68,52 L64,52 L60,52 L56,52 L52,50 L48,46 L44,44 L40,42 L38,42 L36,44 L30,44 L28,48 L26,50 L25,48 Z",
-    /* 东南亚半岛 */
-    "M96,28 L98,24 L100,20 L102,16 L104,12 L104,8 L102,6 L100,6 L98,6 L96,8 L94,10 L92,12 L90,14 L92,16 L94,20 L96,22 L96,26 Z",
-    /* 马来半岛 */
-    "M100,6 L102,4 L104,2 L104,0 L102,-2 L100,-2 L100,0 L100,2 L100,4 Z",
-    /* 苏门答腊 */
-    "M96,4 L98,4 L100,2 L104,0 L106,-2 L106,-4 L104,-4 L102,-4 L100,-2 L98,-2 L96,2 Z",
-    /* 爪哇 */
-    "M106,-6 L108,-6 L110,-8 L114,-8 L116,-8 L112,-8 L110,-8 L108,-6 Z",
-    /* 婆罗洲 */
-    "M108,2 L110,4 L112,4 L116,4 L118,4 L118,2 L116,0 L114,-2 L112,-2 L110,-2 L108,-2 L108,0 Z",
-    /* 日本本州九州 */
-    "M130,32 L131,33 L132,34 L134,34 L135,35 L136,36 L138,36 L139,38 L140,40 L140,42 L138,44 L136,44 L134,44 L132,44 L130,42 L130,40 L130,38 L130,36 L130,34 Z M130,32 L132,32 L133,33 L134,34 L133,34 L132,34 L130,33 Z",
-    /* 台湾 */
-    "M120,26 L121,25 L122,24 L121,22 L120,22 L120,24 Z",
-    /* 澳大利亚 */
-    "M114,-22 L116,-20 L118,-18 L120,-16 L122,-16 L124,-14 L126,-14 L128,-14 L130,-12 L132,-12 L134,-12 L136,-14 L138,-14 L140,-14 L142,-12 L144,-14 L146,-16 L148,-18 L150,-20 L152,-24 L154,-26 L152,-30 L150,-34 L148,-38 L146,-38 L144,-38 L142,-38 L140,-36 L138,-34 L136,-34 L134,-32 L132,-30 L130,-28 L128,-26 L126,-24 L124,-22 L120,-22 L118,-22 L116,-22 Z",
-    /* 新西兰 */
-    "M174,-38 L176,-38 L178,-38 L178,-40 L176,-40 L174,-40 L172,-40 L172,-38 Z M166,-46 L168,-44 L170,-44 L172,-44 L172,-46 L170,-46 L168,-46 Z",
-    /* 北美 */
-    "M-168,72 L-140,70 L-95,72 L-85,70 L-60,48 L-60,45 L-65,44 L-80,43 L-83,42 L-76,34 L-80,25 L-90,30 L-97,26 L-110,23 L-118,34 L-122,37 L-124,46 L-130,55 L-140,60 L-155,60 L-168,65 Z",
-    /* 中美加勒比 */
-    "M-90,18 L-83,14 L-77,14 L-75,18 L-77,20 L-83,20 L-88,20 Z",
-    /* 格陵兰 */
-    "M-72,76 L-60,76 L-45,80 L-40,80 L-40,76 L-50,70 L-60,68 L-70,70 Z",
-    /* 南美 */
-    "M-80,12 L-65,10 L-60,5 L-50,-5 L-35,-8 L-35,-25 L-50,-35 L-65,-55 L-68,-55 L-75,-50 L-80,-40 L-80,-25 L-75,-15 L-80,0 Z",
-    /* 斯里兰卡 */
-    "M80,10 L81,8 L82,8 L81,10 Z",
-    /* 马达加斯加 */
-    "M46,-14 L48,-18 L50,-24 L48,-26 L46,-22 L44,-18 Z",
-    /* 冰岛 */
-    "M-24,64 L-22,64 L-18,64 L-14,64 L-14,66 L-18,68 L-22,68 L-24,66 Z",
-  ];
+/* 把 routes 从名字转成索引 */
+const ROUTES = fd.routes
+  .filter(r => cityIndex[r.from] !== undefined && cityIndex[r.to] !== undefined)
+  .map(r => [cityIndex[r.from], cityIndex[r.to], r.domestic]);
 
-  /* 把经纬度路径字符串转成SVG路径 */
-  function convertPath(pathStr){
-    return pathStr.replace(/(-?\d+\.?\d*),(-?\d+\.?\d*)/g, (m,lon,lat)=>{
-      const [x,y]=project(parseFloat(lon),parseFloat(lat));
-      return `${x.toFixed(1)},${y.toFixed(1)}`;
-    });
-  }
+const canvas = document.getElementById('flight-canvas');
+if(!canvas) return;
+const ctx = canvas.getContext('2d');
+const tooltip = document.getElementById('flight-tooltip');
 
-  /* 绘制大陆 */
-  const defs=document.createElementNS('http://www.w3.org/2000/svg','defs');
-  defs.innerHTML=`
-    <linearGradient id="routeIntl" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#4060e0" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#8090ff" stop-opacity="0.7"/>
-      <stop offset="1" stop-color="#4060e0" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="routeDom" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#40a0ff" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#80c8ff" stop-opacity="0.7"/>
-      <stop offset="1" stop-color="#40a0ff" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  `;
-  svg.appendChild(defs);
+let W, H, dpr = window.devicePixelRatio||1;
+let particles = [];
+let started = false;
 
-  /* 背景 */
-  const bg=document.createElementNS('http://www.w3.org/2000/svg','rect');
-  bg.setAttribute('width',W);bg.setAttribute('height',H);
-  bg.setAttribute('fill','#dbe9f9');
-  svg.appendChild(bg);
+function resize(){
+  const rect = canvas.parentElement.getBoundingClientRect();
+  W = rect.width;
+  H = W * 0.38;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.height = H + 'px';
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.scale(dpr, dpr);
+  particles = [];
+  initParticles();
+}
+
+/* 只显示东半球：经度 -20 ~ 185，纬度 -50 ~ 72 */
+const LON_MIN = -20, LON_MAX = 185;
+const LAT_MIN = -50, LAT_MAX = 72;
+
+function mercY(lat){
+  const r = lat * Math.PI / 180;
+  return Math.log(Math.tan(Math.PI/4 + r/2));
+}
+const mYMin = mercY(LAT_MIN);
+const mYMax = mercY(LAT_MAX);
+
+function project(lon, lat){
+  const x = (lon - LON_MIN) / (LON_MAX - LON_MIN) * W;
+  const my = mercY(lat);
+  const y = H - (my - mYMin) / (mYMax - mYMin) * H;
+  return [x, y];
+}
+
+function ctrlPt(x1,y1,x2,y2){
+  const mx=(x1+x2)/2, my=(y1+y2)/2;
+  const dx=x2-x1, dy=y2-y1;
+  const len=Math.sqrt(dx*dx+dy*dy)||1;
+  const lift = Math.min(len*0.35, H*0.28);
+  return [mx - dy/len*lift, my + dx/len*lift - lift*0.6];
+}
+
+function initParticles(){
+  particles = ROUTES.map((r,i) => ({
+    r, i, t: Math.random(),
+    speed: 0.002 + Math.random()*0.002,
+    alpha: 0,
+  }));
+}
+
+function bezierPt(x1,y1,cx,cy,x2,y2,t){
+  const mt=1-t;
+  return [mt*mt*x1+2*mt*t*cx+t*t*x2, mt*mt*y1+2*mt*t*cy+t*t*y2];
+}
+
+/* 精细大陆轮廓 */
+const LAND = [
+  /* 欧洲 */
+  [[-10,36],[-8,38],[-9,40],[-8,42],[-4,44],[0,44],[3,44],[5,44],[8,46],[10,44],[12,44],[14,44],[18,40],[20,38],[24,38],[26,40],[28,42],[30,44],[28,48],[26,52],[24,56],[22,58],[20,58],[18,60],[16,58],[14,56],[12,58],[10,58],[8,56],[6,58],[5,58],[4,52],[2,52],[0,52],[-2,50],[-4,50],[-5,48],[-2,46],[-2,44],[-4,44],[-6,42],[-8,38],[-10,36]],
+  /* 斯堪的纳维亚 */
+  [[4,52],[8,56],[10,58],[12,58],[14,56],[14,58],[16,60],[18,62],[20,64],[24,68],[28,70],[28,72],[26,70],[24,70],[22,68],[20,68],[18,66],[16,64],[14,62],[12,60],[10,58],[8,56],[6,56],[5,58],[4,52]],
+  /* 非洲 */
+  [[-18,15],[-16,12],[-14,10],[-14,8],[-12,6],[-8,5],[0,5],[4,6],[8,4],[8,2],[10,0],[12,-2],[14,-5],[16,-8],[18,-18],[18,-24],[20,-28],[22,-32],[24,-34],[26,-34],[28,-30],[30,-24],[32,-18],[34,-12],[36,-5],[40,0],[42,4],[44,8],[42,12],[40,16],[38,18],[36,22],[38,24],[40,22],[42,16],[44,12],[44,8],[42,4],[40,0],[36,-5],[34,-12],[32,-18],[30,-24],[28,-30],[26,-34],[24,-34],[22,-32],[20,-28],[18,-24],[18,-18],[16,-8],[14,-5],[12,-2],[10,0],[8,2],[8,4],[4,6],[0,5],[-4,6],[-8,5],[-12,6],[-14,8],[-14,10],[-16,12],[-18,15],[-16,18],[-14,20],[-12,22],[-8,24],[-4,26],[0,26],[4,26],[8,24],[10,22],[12,22],[14,24],[16,24],[18,22],[20,20],[22,16],[24,12],[24,8],[20,8],[16,8],[14,10],[12,12],[10,12],[8,10],[4,8],[0,8],[-4,8],[-8,8],[-12,8],[-14,10],[-16,12],[-18,15]],
+  /* 亚洲主体 */
+  [[25,42],[30,42],[35,38],[38,36],[40,38],[44,38],[48,38],[50,40],[52,40],[54,38],[58,36],[60,36],[62,38],[64,40],[66,40],[68,38],[70,36],[72,36],[72,34],[74,32],[74,30],[72,28],[68,24],[66,24],[64,22],[62,22],[60,22],[60,20],[62,18],[64,16],[66,14],[68,14],[70,16],[72,20],[74,20],[76,16],[78,12],[80,8],[82,8],[84,8],[86,10],[88,10],[90,12],[92,14],[94,18],[96,20],[98,22],[100,22],[100,18],[102,16],[104,12],[106,10],[108,10],[110,12],[110,15],[112,16],[114,18],[116,20],[118,22],[120,22],[122,24],[124,26],[126,28],[128,30],[128,32],[130,34],[132,36],[134,38],[136,40],[138,38],[140,40],[140,42],[138,44],[136,44],[134,44],[132,44],[130,46],[128,48],[126,50],[124,50],[122,48],[120,52],[118,52],[116,50],[114,50],[112,50],[110,48],[106,52],[102,52],[98,52],[94,52],[90,52],[86,52],[82,52],[80,54],[76,54],[72,54],[68,52],[64,52],[60,52],[56,52],[52,50],[48,46],[44,44],[40,42],[38,42],[36,44],[30,44],[28,48],[26,50],[25,48],[25,42]],
+  /* 中国细化 */
+  [[73,40],[76,38],[80,36],[84,36],[88,36],[90,38],[92,38],[94,36],[96,36],[98,36],[100,36],[102,34],[104,34],[106,34],[108,32],[110,32],[112,30],[114,30],[116,28],[118,26],[120,26],[122,28],[122,32],[120,34],[118,36],[116,38],[114,38],[112,36],[110,36],[108,36],[106,36],[104,36],[102,36],[100,38],[98,38],[96,38],[94,36],[92,36],[90,36],[88,34],[86,34],[84,34],[82,34],[80,34],[78,34],[76,36],[74,36],[72,36],[72,38],[73,40]],
+  /* 东南亚半岛 */
+  [[96,28],[98,24],[100,20],[102,16],[104,12],[104,8],[102,6],[100,6],[98,6],[96,8],[94,10],[92,12],[90,14],[92,16],[94,20],[96,22],[96,26],[96,28]],
+  /* 马来半岛 */
+  [[100,6],[102,4],[104,2],[104,0],[102,-2],[100,-2],[100,0],[100,2],[100,4],[100,6]],
+  /* 苏门答腊 */
+  [[96,4],[98,4],[100,2],[104,0],[106,-2],[106,-4],[104,-4],[102,-4],[100,-2],[98,-2],[96,2],[96,4]],
+  /* 爪哇 */
+  [[106,-6],[108,-6],[110,-8],[112,-8],[114,-8],[116,-8],[112,-8],[110,-8],[108,-6],[106,-6]],
+  /* 婆罗洲 */
+  [[108,2],[110,4],[112,4],[114,4],[116,4],[118,4],[118,2],[116,0],[114,-2],[112,-2],[110,-2],[108,-2],[108,0],[108,2]],
+  /* 日本 */
+  [[130,32],[131,33],[132,34],[133,34],[134,34],[135,35],[136,36],[137,36],[138,36],[139,38],[140,40],[140,42],[138,44],[136,44],[134,44],[132,44],[130,42],[130,40],[130,38],[130,36],[130,34],[130,32]],
+  /* 九州四国 */
+  [[130,32],[132,32],[133,33],[134,34],[133,34],[132,34],[130,33],[130,32]],
+  /* 澳大利亚 */
+  [[114,-22],[116,-20],[118,-18],[120,-16],[122,-16],[124,-14],[126,-14],[128,-14],[130,-12],[132,-12],[134,-12],[136,-14],[138,-14],[140,-14],[142,-12],[144,-14],[146,-16],[148,-18],[150,-20],[152,-24],[154,-26],[152,-30],[150,-34],[148,-38],[146,-38],[144,-38],[142,-38],[140,-36],[138,-34],[136,-34],[134,-32],[132,-30],[130,-28],[128,-26],[126,-24],[124,-22],[120,-22],[118,-22],[116,-22],[114,-22]],
+  /* 新西兰南岛 */
+  [[166,-46],[168,-44],[170,-44],[172,-44],[172,-46],[170,-46],[168,-46],[166,-46]],
+  /* 新西兰北岛 */
+  [[174,-38],[176,-38],[178,-38],[178,-40],[176,-40],[174,-40],[172,-40],[172,-38],[174,-38]],
+  /* 斯里兰卡 */
+  [[80,10],[81,8],[82,8],[81,10],[80,10]],
+  /* 台湾 */
+  [[120,26],[121,25],[122,24],[121,22],[120,22],[120,24],[120,26]],
+  /* 冰岛 */
+  [[-24,64],[-22,64],[-18,64],[-14,64],[-14,66],[-18,68],[-22,68],[-24,66],[-24,64]],
+];
+
+function drawBg(){
+  /* 透明背景，融入外框深紫色 */
+  ctx.clearRect(0,0,W,H);
 
   /* 经纬网 */
-  const grid=document.createElementNS('http://www.w3.org/2000/svg','g');
-  for(let lon=-180;lon<=180;lon+=30){
-    const l=document.createElementNS('http://www.w3.org/2000/svg','line');
+  ctx.lineWidth=0.3;
+  for(let lon=-20;lon<=185;lon+=30){
     const [x]=project(lon,0);
-    l.setAttribute('x1',x);l.setAttribute('y1',0);l.setAttribute('x2',x);l.setAttribute('y2',H);
-    l.setAttribute('stroke',lon===0?'rgba(80,120,200,0.3)':'rgba(100,150,220,0.15)');
-    l.setAttribute('stroke-width','0.5');
-    grid.appendChild(l);
+    if(x<0||x>W) continue;
+    ctx.strokeStyle = lon===0 ? 'rgba(100,130,200,0.25)' : 'rgba(60,85,150,0.15)';
+    ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();
   }
-  for(let lat=-60;lat<=80;lat+=30){
-    const ll=document.createElementNS('http://www.w3.org/2000/svg','line');
-    const [,y]=project(0,lat);
-    ll.setAttribute('x1',0);ll.setAttribute('y1',y);ll.setAttribute('x2',W);ll.setAttribute('y2',y);
-    ll.setAttribute('stroke',lat===0?'rgba(80,120,200,0.3)':'rgba(100,150,220,0.15)');
-    ll.setAttribute('stroke-width','0.5');
-    grid.appendChild(ll);
+  for(let lat=-50;lat<=72;lat+=30){
+    const y=project(0,lat)[1];
+    if(y<0||y>H) continue;
+    ctx.strokeStyle = lat===0 ? 'rgba(100,130,200,0.25)' : 'rgba(60,85,150,0.12)';
+    ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
   }
-  svg.appendChild(grid);
+}
 
-  /* 大陆 */
-  const landG=document.createElementNS('http://www.w3.org/2000/svg','g');
-  LAND_PATHS.forEach(pathStr=>{
-    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
-    p.setAttribute('d','M'+convertPath(pathStr.replace(/^M/,'')));
-    p.setAttribute('fill','#b8d0e8');
-    p.setAttribute('stroke','#8aaac8');
-    p.setAttribute('stroke-width','0.6');
-    landG.appendChild(p);
+function drawMap(){
+  /* 大陆阴影（偏移一点制造立体感） */
+  LAND.forEach(poly=>{
+    ctx.beginPath();
+    poly.forEach(([lon,lat],i)=>{
+      const [x,y]=project(lon,lat);
+      i===0?ctx.moveTo(x+1.5,y+1.5):ctx.lineTo(x+1.5,y+1.5);
+    });
+    ctx.closePath();
+    ctx.fillStyle='rgba(0,0,0,0.4)';
+    ctx.fill();
   });
-  svg.appendChild(landG);
 
-  /* 航线 */
-  const routeG=document.createElementNS('http://www.w3.org/2000/svg','g');
-  fd.routes.forEach(r=>{
-    const fi=cityMap[r.from], ti=cityMap[r.to];
-    if(fi===undefined||ti===undefined) return;
-    const fc=fd.cities[fi], tc=fd.cities[ti];
-    const [x1,y1]=project(fc.lon,fc.lat);
-    const [x2,y2]=project(tc.lon,tc.lat);
-    const mx=(x1+x2)/2, my=(y1+y2)/2;
-    const dx=x2-x1, dy=y2-y1;
-    const len=Math.sqrt(dx*dx+dy*dy)||1;
-    const lift=Math.min(len*0.3,80);
-    const cx=mx-dy/len*lift, cy=my+dx/len*lift-lift*0.5;
+  /* 大陆主体 */
+  LAND.forEach(poly=>{
+    ctx.beginPath();
+    poly.forEach(([lon,lat],i)=>{
+      const [x,y]=project(lon,lat);
+      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    });
+    ctx.closePath();
 
-    /* 发光底层 */
-    const glow=document.createElementNS('http://www.w3.org/2000/svg','path');
-    const d=`M${x1},${y1} Q${cx},${cy} ${x2},${y2}`;
-    glow.setAttribute('d',d);
-    glow.setAttribute('fill','none');
-    glow.setAttribute('stroke',r.domestic?'rgba(80,180,255,0.18)':'rgba(80,100,255,0.15)');
-    glow.setAttribute('stroke-width','4');
-    glow.setAttribute('stroke-linecap','round');
-    routeG.appendChild(glow);
+    /* 内部渐变：顶部稍亮，底部深 */
+    const ys = poly.map(([lon,lat])=>project(lon,lat)[1]);
+    const minY = Math.min(...ys), maxY = Math.max(...ys);
+    const landGrad = ctx.createLinearGradient(0,minY,0,maxY);
+    landGrad.addColorStop(0,'rgba(38,52,95,0.92)');
+    landGrad.addColorStop(0.5,'rgba(28,40,78,0.95)');
+    landGrad.addColorStop(1,'rgba(18,28,60,0.98)');
+    ctx.fillStyle = landGrad;
+    ctx.fill();
 
-    /* 主线 */
-    const line=document.createElementNS('http://www.w3.org/2000/svg','path');
-    line.setAttribute('d',d);
-    line.setAttribute('fill','none');
-    line.setAttribute('stroke',r.domestic?'rgba(80,190,255,0.75)':'rgba(100,130,255,0.65)');
-    line.setAttribute('stroke-width','1.2');
-    line.setAttribute('stroke-linecap','round');
-    routeG.appendChild(line);
+    /* 海岸线 */
+    ctx.strokeStyle='rgba(80,105,200,0.5)';
+    ctx.lineWidth=0.7;
+    ctx.stroke();
   });
-  svg.appendChild(routeG);
 
-  /* 城市 */
-  const cityG=document.createElementNS('http://www.w3.org/2000/svg','g');
-  fd.cities.forEach(c=>{
-    const [x,y]=project(c.lon,c.lat);
-    if(x<0||x>W||y<0||y>H) return;
-    if(c.hub){
-      /* 枢纽：外圈+实心 */
-      const outer=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      outer.setAttribute('cx',x);outer.setAttribute('cy',y);outer.setAttribute('r','7');
-      outer.setAttribute('fill','rgba(245,200,66,0.2)');outer.setAttribute('stroke','rgba(245,200,66,0.5)');outer.setAttribute('stroke-width','1');
-      cityG.appendChild(outer);
-      const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      dot.setAttribute('cx',x);dot.setAttribute('cy',y);dot.setAttribute('r','3.5');
-      dot.setAttribute('fill','#f5c842');
-      cityG.appendChild(dot);
+  /* 高光：沿海岸内侧加一层浅色边 */
+  LAND.forEach(poly=>{
+    ctx.beginPath();
+    poly.forEach(([lon,lat],i)=>{
+      const [x,y]=project(lon,lat);
+      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    });
+    ctx.closePath();
+    ctx.strokeStyle='rgba(120,150,255,0.15)';
+    ctx.lineWidth=1.5;
+    ctx.stroke();
+  });
+}
+
+function drawRoutes(progress){
+  const count=Math.floor(progress*ROUTES.length);
+  ROUTES.forEach((r,i)=>{
+    if(i>=count) return;
+    const [x1,y1]=project(CITIES[r[0]][1],CITIES[r[0]][2]);
+    const [x2,y2]=project(CITIES[r[1]][1],CITIES[r[1]][2]);
+    const [cx,cy]=ctrlPt(x1,y1,x2,y2);
+
+    /* 外层发光 */
+    const glow=ctx.createLinearGradient(x1,y1,x2,y2);
+    if(r[2]){
+      glow.addColorStop(0,'rgba(74,158,255,0.0)');
+      glow.addColorStop(0.5,'rgba(74,158,255,0.15)');
+      glow.addColorStop(1,'rgba(74,158,255,0.0)');
     } else {
-      const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
-      dot.setAttribute('cx',x);dot.setAttribute('cy',y);dot.setAttribute('r','2.5');
-      dot.setAttribute('fill','rgba(120,160,255,0.85)');
-      cityG.appendChild(dot);
+      glow.addColorStop(0,'rgba(100,120,255,0.0)');
+      glow.addColorStop(0.5,'rgba(140,160,255,0.12)');
+      glow.addColorStop(1,'rgba(100,120,255,0.0)');
     }
-    /* hover交互 */
-    const hit=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    hit.setAttribute('cx',x);hit.setAttribute('cy',y);hit.setAttribute('r','10');
-    hit.setAttribute('fill','transparent');
-    hit.dataset.name=c.name;
-    hit.addEventListener('mouseenter',e=>{
-      tooltip.style.display='block';
-      tooltip.textContent=c.name;
-    });
-    hit.addEventListener('mousemove',e=>{
-      const rect=svg.closest('.flights-map-wrap').getBoundingClientRect();
-      tooltip.style.left=(e.clientX-rect.left+14)+'px';
-      tooltip.style.top=(e.clientY-rect.top-10)+'px';
-    });
-    hit.addEventListener('mouseleave',()=>tooltip.style.display='none');
-    cityG.appendChild(hit);
-  });
-  svg.appendChild(cityG);
+    ctx.beginPath();ctx.moveTo(x1,y1);
+    ctx.quadraticCurveTo(cx,cy,x2,y2);
+    ctx.strokeStyle=glow;ctx.lineWidth=4;ctx.stroke();
 
-  /* 动态粒子 — 用SVG animateMotion */
-  const particleG=document.createElementNS('http://www.w3.org/2000/svg','g');
-  fd.routes.slice(0,30).forEach((r,idx)=>{
-    const fi=cityMap[r.from], ti=cityMap[r.to];
-    if(fi===undefined||ti===undefined) return;
-    const fc=fd.cities[fi], tc=fd.cities[ti];
-    const [x1,y1]=project(fc.lon,fc.lat);
-    const [x2,y2]=project(tc.lon,tc.lat);
-    const mx=(x1+x2)/2, my=(y1+y2)/2;
-    const dx=x2-x1, dy=y2-y1;
-    const len=Math.sqrt(dx*dx+dy*dy)||1;
-    const lift=Math.min(len*0.3,80);
-    const cx=mx-dy/len*lift, cy=my+dx/len*lift-lift*0.5;
-    const dur=(4+Math.random()*4).toFixed(1);
-    const begin=(-Math.random()*8).toFixed(1);
-    const particle=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    particle.setAttribute('r','1.8');
-    particle.setAttribute('fill',r.domestic?'rgba(160,220,255,0.9)':'rgba(180,200,255,0.9)');
-    const anim=document.createElementNS('http://www.w3.org/2000/svg','animateMotion');
-    anim.setAttribute('dur',`${dur}s`);
-    anim.setAttribute('begin',`${begin}s`);
-    anim.setAttribute('repeatCount','indefinite');
-    anim.setAttribute('calcMode','spline');
-    anim.setAttribute('keySplines','0.4 0 0.6 1');
-    const mpath=document.createElementNS('http://www.w3.org/2000/svg','mpath');
-    /* 用内联路径 */
-    const pathId=`rp${idx}`;
-    const hiddenPath=document.createElementNS('http://www.w3.org/2000/svg','path');
-    hiddenPath.setAttribute('id',pathId);
-    hiddenPath.setAttribute('d',`M${x1},${y1} Q${cx},${cy} ${x2},${y2}`);
-    hiddenPath.setAttribute('fill','none');
-    defs.appendChild(hiddenPath);
-    mpath.setAttributeNS('http://www.w3.org/1999/xlink','href',`#${pathId}`);
-    anim.appendChild(mpath);
-    particle.appendChild(anim);
-    particleG.appendChild(particle);
+    /* 内层亮线 */
+    const grad=ctx.createLinearGradient(x1,y1,x2,y2);
+    if(r[2]){
+      grad.addColorStop(0,'rgba(74,158,255,0.0)');
+      grad.addColorStop(0.5,'rgba(120,195,255,0.75)');
+      grad.addColorStop(1,'rgba(74,158,255,0.0)');
+    } else {
+      grad.addColorStop(0,'rgba(100,120,255,0.0)');
+      grad.addColorStop(0.5,'rgba(160,175,255,0.7)');
+      grad.addColorStop(1,'rgba(100,120,255,0.0)');
+    }
+    ctx.beginPath();ctx.moveTo(x1,y1);
+    ctx.quadraticCurveTo(cx,cy,x2,y2);
+    ctx.strokeStyle=grad;ctx.lineWidth=1.2;ctx.stroke();
   });
-  svg.appendChild(particleG);
+}
+
+function drawParticles(){
+  particles.forEach(p=>{
+    const r=ROUTES[p.i];
+    const [x1,y1]=project(CITIES[r[0]][1],CITIES[r[0]][2]);
+    const [x2,y2]=project(CITIES[r[1]][1],CITIES[r[1]][2]);
+    const [cx,cy]=ctrlPt(x1,y1,x2,y2);
+    const [px,py]=bezierPt(x1,y1,cx,cy,x2,y2,p.t);
+    ctx.beginPath();ctx.arc(px,py,1.6,0,Math.PI*2);
+    ctx.fillStyle=r[2]?`rgba(160,210,255,${p.alpha})`:`rgba(180,190,255,${p.alpha})`;
+    ctx.fill();
+    p.t+=p.speed;
+    if(p.t>1){p.t=0;p.alpha=0;}
+    else if(p.t<0.1) p.alpha=p.t/0.1*0.9;
+    else if(p.t>0.9) p.alpha=(1-p.t)/0.1*0.9;
+    else p.alpha=0.9;
+  });
+}
+
+function drawCities(){
+  CITIES.forEach(([name,lon,lat,hub])=>{
+    const [x,y]=project(lon,lat);
+    if(x<0||x>W||y<0||y>H) return;
+
+    if(hub){
+      /* 枢纽：三层光晕 */
+      const g3=ctx.createRadialGradient(x,y,0,x,y,18);
+      g3.addColorStop(0,'rgba(245,200,66,0.18)');
+      g3.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g3;ctx.beginPath();ctx.arc(x,y,18,0,Math.PI*2);ctx.fill();
+
+      const g2=ctx.createRadialGradient(x,y,0,x,y,10);
+      g2.addColorStop(0,'rgba(245,200,66,0.45)');
+      g2.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g2;ctx.beginPath();ctx.arc(x,y,10,0,Math.PI*2);ctx.fill();
+
+      /* 外圈 */
+      ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);
+      ctx.strokeStyle='rgba(245,200,66,0.6)';ctx.lineWidth=1;ctx.stroke();
+      /* 实心点 */
+      ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);
+      ctx.fillStyle='#f5c842';ctx.fill();
+    } else {
+      /* 普通城市：两层 */
+      const g=ctx.createRadialGradient(x,y,0,x,y,7);
+      g.addColorStop(0,'rgba(160,185,255,0.35)');
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.fill();
+
+      ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);
+      ctx.fillStyle='rgba(200,218,255,0.9)';ctx.fill();
+    }
+  });
+}
+
+let startTime=null, animating=false;
+function animate(ts){
+  if(!startTime) startTime=ts;
+  const progress=Math.min((ts-startTime)/3000,1);
+  drawBg();drawMap();drawRoutes(progress);drawCities();drawParticles();
+  if(progress<1) requestAnimationFrame(animate);
+  else { animating=true; requestAnimationFrame(loop); }
+}
+function loop(){
+  drawBg();drawMap();drawRoutes(1);drawCities();drawParticles();
+  requestAnimationFrame(loop);
+}
+
+canvas.addEventListener('mousemove',e=>{
+  const rect=canvas.getBoundingClientRect();
+  const mx=e.clientX-rect.left, my=e.clientY-rect.top;
+  let found=null;
+  CITIES.forEach(([name,lon,lat,hub])=>{
+    const [x,y]=project(lon,lat);
+    if(Math.sqrt((mx-x)**2+(my-y)**2)<(hub?12:8)) found=name;
+  });
+  if(found){
+    tooltip.style.display='block';
+    tooltip.style.left=(mx+14)+'px';
+    tooltip.style.top=(my-10)+'px';
+    tooltip.textContent=found;
+  } else { tooltip.style.display='none'; }
+});
+canvas.addEventListener('mouseleave',()=>tooltip.style.display='none');
+
+resize();
+window.addEventListener('resize',resize);
+const io=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting&&!started){
+    started=true; startTime=null;
+    requestAnimationFrame(animate);
+  }
+},{threshold:0.2});
+io.observe(canvas);
+
 })();
 render();
 </script>
