@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>颠覆 · 王彦淳</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff;color:#1d1d1f;font-family:'Noto Serif SC','Noto Sans SC',serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:14px;color:#1d1d1f;text-decoration:none}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:12px;color:#6e6e73;text-decoration:none;font-family:'Noto Sans SC',sans-serif;transition:color .2s}
+.nav-back:hover{color:#1d1d1f}
+.nav-back:hover svg{transform:translateX(-3px)}
+.nav-back svg{transition:transform .2s}
+
+/* HERO */
+.hero{max-width:680px;margin:0 auto;padding:96px 48px 64px;}
+.hero-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#b0b0b8;margin-bottom:24px;font-family:'Noto Sans SC',sans-serif}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-.02em;color:#1d1d1f;line-height:1.1;margin-bottom:32px}
+.hero-meta{display:flex;align-items:center;gap:12px;font-size:11px;color:#b0b0b8;letter-spacing:.06em;font-family:'Noto Sans SC',sans-serif}
+.hero-dot{width:3px;height:3px;border-radius:50%;background:#d2d2d7}
+
+/* 分割线 */
+.rule{height:1px;background:#f0f0f2;max-width:680px;margin:0 auto}
+
+/* BODY */
+.body{max-width:640px;margin:0 auto;padding:72px 48px 120px}
+
+/* 章节锚点 */
+.chapter{
+  margin:72px 0 32px;
+}
+.chapter:first-child{margin-top:0}
+.chapter-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,2.5vw,26px);
+  font-weight:700;letter-spacing:-.01em;
+  color:#1d1d1f;line-height:1.2;
+}
+
+/* 正文段落 */
+.para{
+  font-size:16px;
+  line-height:2;
+  color:#2d2d2f;
+  font-weight:300;
+  margin-bottom:28px;
+  letter-spacing:.02em;
+}
+.para:last-child{margin-bottom:0}
+
+/* 特殊行：斜体/引用感 */
+.para-note{
+  font-size:14px;
+  line-height:1.9;
+  color:#8e8e93;
+  font-style:italic;
+  margin-bottom:28px;
+  padding-left:18px;
+  border-left:2px solid #e8e8ed;
+}
+
+/* 关键句：加粗浮出 */
+.para-key{
+  font-size:17px;
+  line-height:1.85;
+  color:#1d1d1f;
+  font-weight:400;
+  margin-bottom:32px;
+  letter-spacing:.01em;
+}
+
+/* 结尾 */
+.ending{
+  margin-top:80px;
+  padding-top:48px;
+  border-top:1px solid #f0f0f2;
+  text-align:center;
+}
+.ending-quote{
+  font-family:'Playfair Display',serif;
+  font-size:16px;
+  font-style:italic;
+  color:#6e6e73;
+  line-height:1.9;
+  max-width:480px;
+  margin:0 auto 36px;
+}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 26px;border:1px solid #d2d2d7;border-radius:980px;
+  font-size:12px;letter-spacing:.06em;color:#6e6e73;
+  text-decoration:none;font-family:'Noto Sans SC',sans-serif;
+  transition:all .2s;
+}
+.back-btn:hover{border-color:#1d1d1f;color:#1d1d1f}
+
+/* 滚动淡入 */
+.fade{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.fade.on{opacity:1;transform:translateY(0)}
+
+@media(max-width:680px){
+  nav{padding:0 20px}
+  .hero{padding:72px 24px 48px}
+  .body{padding:48px 24px 96px}
+  .para{font-size:15px;line-height:1.95}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Yolanda Wang</a>
+  <a href="index.html#blog" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="#6e6e73" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    故事系列
+  </a>
+</nav>
+
+<div class="hero fade">
+  <div class="hero-label">Stories · 成长</div>
+  <h1 class="hero-title">颠覆</h1>
+  <div class="hero-meta">
+    <span>王彦淳</span>
+    <span class="hero-dot"></span>
+    <span>2025</span>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<div class="body">
+
+  <!-- 章节一：颠覆 -->
+  <div class="chapter fade">
+    <div class="chapter-title">颠覆</div>
+  </div>
+
+  <p class="para fade">直到我见到了更广阔的世界，我遇到了一群人，他们自信、不拘小节、对人温暖、平和大气，极具天赋而又努力。</p>
+
+  <p class="para fade">我的本质在这个阶段仍没有改变。我带着人设，希望别人看我时能带着欣赏的眼光，说这个人有所长。</p>
+
+  <p class="para fade">真正的我其实非常普通。我软弱、敏感，会逃避，会偷懒，会拖延，想要的太多，却无法行动。</p>
+
+  <p class="para fade">人和人的差距可以有这么大啊。这种差距不由个人努力决定，而是家庭教育、经济条件、生活环境带来的圆融。这时我才意识到，原来人生还有别的活法，以及，我可以选择像她们一样去生活。</p>
+
+  <p class="para fade">曾经，我是也是拥有其他可能性的。只可惜我盲从了太多年，最终泯然众人。</p>
+
+  <p class="para fade">和她们相处的时，我不需要怀疑自己是否有错，不需要刻意迎合，我第一次遇到了与我有相似兴趣、相似天赋的人。</p>
+
+  <p class="para fade">我的问题也可以被包容。当时的我还不太能独立生活，她们教我系鞋带，教我健康地饮食，在洗完头后帮我吹干头发，在我逛街和过马路神游时把我拉回来。状态不稳定时，我为人较为冷淡和不耐烦，但她们仍非常友善。</p>
+
+  <p class="para fade">我们间的相处也并不总是舒心，会出现内耗、矛盾，她们也会不耐烦、发脾气，但没有关系，她们带给我的，远远超过了那些龃龉。</p>
+
+  <p class="para fade">也许我在描述时，不自觉地进行了美化。也许对她们来说，她们只是向我释放了微不足道的善意，但这已经足够了。我每次回忆这个时期，都感到非常温暖，我感觉自己是被朋友们爱着的。我一直很开心能遇到她们。</p>
+
+  <p class="para-key fade">总有些人让你看他一眼就很想成为那样的人。在这之后，我开始了苦苦追寻的道路，我觉得那是我想到达的彼岸。</p>
+
+  <p class="para fade">我曾经非常焦虑，我与她们间的差距，像是道无法逾越的鸿沟，我觉得我永远也追不上她们。我用了很多时间，费尽了全力，才让自己达到了别人当年的下限。那我还要多久时间，多少的努力，才能到达下一个阶段呢？</p>
+
+  <p class="para fade">心理咨询时，治疗师问我画面，我回答过其他的意象，直到近日，我感受到我飘在半空中。我突然就明白了，在我的心里存在的，一直是一场连绵不息，从未停歇的大风。</p>
+
+  <p class="para-note fade">没有人是完美的，吸引我的人也只是少数，那剩下的人呢？他们不去比较，不觉得别人更好，所以他们很快乐。我羡慕他们的不在乎，羡慕他们能以自然的态度面对。</p>
+
+  <!-- 章节二：精神断裂 -->
+  <div class="chapter fade">
+    <div class="chapter-title">精神断裂</div>
+  </div>
+
+  <p class="para fade">严重的抑郁和焦虑也在这个阶段出现。</p>
+
+  <p class="para fade">初二出国后，我再也没把自己当成小孩子。亲自处理生活中的所有事情，不去麻烦别人，也不喜欢别人麻烦我。如非必要，我不向任何人寻求帮助。</p>
+
+  <p class="para fade">我跌跌撞撞地开始，跌跌撞撞地摸索，不停的摔倒、挣扎，在反复的求索中倍受折磨。我强行抛开情绪，让自己理性处理问题；我如履薄冰、战战兢兢，一步也不敢行差踏错；我努力使自己淡然，不让自己抱有期待。</p>
+
+  <p class="para fade">我隐约感觉到有什么东西离我而去了，在我甚至不知道丢失的是什么的情况下。</p>
+
+  <p class="para fade">这并不是个容易的过程，在一些时刻，我不想考虑后果了，只想退学回国。可惜，学籍被注销，我没有退路了。</p>
+
+  <p class="para fade">我去医院做了检查，我得到了诊断，因为家人的反对，我没能得到治疗。</p>
+
+  <p class="para-key fade">求助无门后，我感觉到了清晰的绝望。我变得越来越沉默，丧失了大部分的表达欲与分享欲。我一个人孤独地生活着，不再叙述他人不能理解的、我承受着的痛苦。我的身后没有灯火，身前白雾茫茫，我一个人站在桥上，在原地徘徊。</p>
+
+  <p class="para fade">我努力地回忆着经历过的挑战，从中汲取任何一丝成就感，在无限度趋近于绝望的状态挣扎求生，在无数个无希望的夜晚里努力让自己再活久一点，洗脑般地告诉自己"无论如何，都过来了；除却生死，都是小事，明天又是新的一天。"</p>
+
+  <p class="para fade">我丧失了感知的能力，我判断不了自己的感受，更无法描述出来。我变得愈加淡漠，无法去爱，也无法去相信。我怀疑一切，我拒绝一切，我冷眼旁观。</p>
+
+  <p class="para-key fade">某天普通的下午，我走在回宿舍的路上，世界突然崩塌了——那是脑中的一片白色建筑，在此前我从未意识到它的存在。</p>
+
+  <p class="para fade">我试图分辨出我又丢失了什么。这好像是组成我的东西。我所有的想法、经历，连带着感受一起，全部变成了一座废墟。</p>
+
+  <p class="para fade">我不知道应该怎么应对，只在原地呆坐着，看墙上钟的指针一点一点行走，迟钝地反应"现在六点了，我应该去吃饭。"</p>
+
+  <p class="para fade">至此，我丧失了大部分能力，只能做出最基本的应对。我照着过去的生活惯例和外界安排的时间表，行尸走肉般地生活着。</p>
+
+  <p class="para fade">我仍试着把这片残垣断壁修补起来。我走进闹市感受烟火气，走过寺庙寻求信仰的帮助，在心理学哲学书籍中寻找答案。我看过无数次的日落日出，在每个凌晨看着天空一点点变亮。我寻找任何一样能解救我的东西，但是这些都没有让我好转起来。</p>
+
+  <p class="para fade">我的躯体化严重，身上的病痛可以列出一长串，如头痛、心脏痛、胸骨肋骨痛、暴饮暴食、反胃、癫痫等。</p>
+
+  <p class="para fade">我做了很多纷乱的梦，不确定自己每日是否真的醒转。我的世界被大雾笼罩，开始分不清幻想、梦境与现实。</p>
+
+  <p class="para fade">我忘记了很多事情，当我回头看，我看到很多事物将我堆叠起来，但我看不清它们是什么。</p>
+
+  <p class="para fade">我的灵魂从身体里脱离，飘在半空中，以第三人称来看世界。</p>
+
+  <p class="para fade">曾经有位打算留学的小友问我，出国的体验如何，会后悔吗？</p>
+
+  <p class="para fade">我答，"把在国内很多年才能知道的事情在这一年半两年里领悟到了，我也不知道算不算坏事，也就无从谈后不后悔。"</p>
+
+  <p class="para-note fade">但其实，后悔啊，当然后悔。我彻底撑不住了，不想考虑任何后果，只想退学回国。可惜，学籍被注销，我没有退路了。</p>
+
+  <p class="para fade">每次放假，是我暂时能够摆脱痛苦的时候。我停滞下来，进入稳定中。回到学校，我则会再次沉浸到负面情绪中。我会看（听）一些较为blue的作品或歌曲，又或是不断地进行回忆和反思。</p>
+
+  <p class="para fade">这让我感到舒服。在完全的黑暗中有一条宽阔的暗河，我处在其中，被流动的水流挟裹着，好像与水融为一体，顺其自然的向前。我在此间感到平静。这是一种脆弱的平静，我的理智劝诫我从中脱离，但我无法动弹。</p>
+
+  <div class="ending fade">
+    <p class="ending-quote">用叔本华的概念描述，人有两种活着的状态，一种是在痛苦中撕裂，一种是浑然不觉的安稳。交替感受，中间混有焦虑和希望当作润滑。</p>
+    <a href="index.html#blog" class="back-btn">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      返回故事系列
+    </a>
+  </div>
+
+</div>
+
+<script>
+const ob = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('on');
+      ob.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08});
+document.querySelectorAll('.fade').forEach(el => ob.observe(el));
+</script>
+</body>
+</html>
