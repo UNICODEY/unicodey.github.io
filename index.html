@@ -98,126 +98,82 @@ const DATA = {
     },
   ],
 
-  /* —— 荣誉奖项 —— school 填对应 school_en，复制 { } 块新增 */
+  /* —— 荣誉奖项 —— school 填对应 school_en */
   awards: [
-    {
-      year:     "2023",
-      school:   "Godolphin School",
-      title_zh: "BPhO Senior Physics Challenge",
-      title_en: "BPhO Senior Physics Challenge",
-      org_zh:   "Silver Award",
-      org_en:   "Silver Award",
-    },
-    {
-      year:     "2022",
-      school:   "Oxford International College",
-      title_zh: "British Mathematical Olympiad",
-      title_en: "British Mathematical Olympiad",
-      org_zh:   "Round 1",
-      org_en:   "Round 1",
-    },
-    {
-      year:     "2022",
-      school:   "Oxford International College",
-      title_zh: "Senior Mathematical Challenge",
-      title_en: "Senior Mathematical Challenge",
-      org_zh:   "Gold Certificate",
-      org_en:   "Gold Certificate",
-    },
-    {
-      year:     "2021",
-      school:   "Maple Glory United School",
-      title_zh: "High School Mathematical Contest in Modelling",
-      title_en: "High School Mathematical Contest in Modelling",
-      org_zh:   "Honorable Mention",
-      org_en:   "Honorable Mention",
-    },
-    {
-      year:     "2021",
-      school:   "Maple Glory United School",
-      title_zh: "ASDAN ALL-STAR Competition",
-      title_en: "ASDAN ALL-STAR Competition",
-      org_zh:   "Bronze Award",
-      org_en:   "Bronze Award",
-    },
-    {
-      year:     "2020",
-      school:   "Roedean School",
-      title_zh: "ASDAN Business Simulation",
-      title_en: "ASDAN Business Simulation",
-      org_zh:   "Silver Award",
-      org_en:   "Silver Award",
-    },
+    { year:"2023", school:"Godolphin School",         title_zh:"BPhO Senior Physics Challenge",              title_en:"BPhO Senior Physics Challenge",              org_zh:"Silver Award",      org_en:"Silver Award" },
+    { year:"2022", school:"Oxford International College", title_zh:"British Mathematical Olympiad",          title_en:"British Mathematical Olympiad",              org_zh:"Round 1",           org_en:"Round 1" },
+    { year:"2022", school:"Oxford International College", title_zh:"Senior Mathematical Challenge",          title_en:"Senior Mathematical Challenge",              org_zh:"Gold Certificate",  org_en:"Gold Certificate" },
+    { year:"2021", school:"Maple Glory United School", title_zh:"High School Mathematical Contest in Modelling", title_en:"High School Mathematical Contest in Modelling", org_zh:"Honorable Mention", org_en:"Honorable Mention" },
+    { year:"2021", school:"Maple Glory United School", title_zh:"ASDAN ALL-STAR Competition",               title_en:"ASDAN ALL-STAR Competition",                org_zh:"Bronze Award",      org_en:"Bronze Award" },
+    { year:"2020", school:"Roedean School",            title_zh:"ASDAN Business Simulation",                title_en:"ASDAN Business Simulation",                 org_zh:"Silver Award",      org_en:"Silver Award" },
   ],
 
-  /* —— 行业考察 —— type: "visit"=参观走访, "research"=调研分析文章
-     cover: 封面图文件名，留空显示占位
-     link:  对应的 .html 文件名，留空不可点击
+  /* —— 行业考察 —— 和工作经历一样的纯文字列表格式
      复制 { } 块新增
   ———————————————————————————————————————— */
   industry: [
     {
-      type:     "visit",
-      date_zh:  "2025.1",
-      date_en:  "Jan 2025",
-      cover:    "",
-      tag_zh:   "参观走访",
-      tag_en:   "Site Visit",
-      title_zh: "安发生物科技 · 机房与运营",
-      title_en: "Anfa Biotech · Data Center Visit",
-      summary_zh: "走进宁德工厂，了解生物科技企业的IT基础设施与实际运营状态。",
-      summary_en: "A visit to the Ningde facility to understand IT infrastructure in a biotech firm.",
-      link:     "",
-    },
-    {
-      type:     "research",
       date_zh:  "2025.7",
       date_en:  "Jul 2025",
+      place:    "信永中和会计师事务所",
+      city:     "厦门",
+      tag_zh:   "会计 / 审计",
+      tag_en:   "Accounting / Audit",
+      title_zh: "传统审计行业观察",
+      title_en: "Observations on Traditional Audit",
+      desc_zh:  "实习期间近距离接触审计报表与核查流程。传统审计高度依赖人工复核，流程标准化程度高但效率有限。数字化工具的引入仍处于早期阶段，底层数据整合是最大瓶颈。",
+      desc_en:  "Close exposure to audit reports and verification workflows during internship. Traditional audit relies heavily on manual review — highly standardised but efficiency-limited. Digital tools are still in early adoption; data integration remains the core bottleneck.",
+    },
+    {
+      date_zh:  "2025.1",
+      date_en:  "Jan 2025",
+      place:    "安发（福建）生物科技有限公司",
+      city:     "宁德，中国",
+      tag_zh:   "生物科技 / IT基础设施",
+      tag_en:   "Biotech / IT Infrastructure",
+      title_zh: "中小型生物科技企业的IT现状",
+      title_en: "IT Reality in a Mid-Size Biotech Firm",
+      desc_zh:  "协助检查机房与网络设备。企业IT基础设施建设较为初级，依赖外包维护，内部技术积累薄弱。生产系统与管理系统之间数据孤岛问题明显，数字化升级需求迫切但预算受限。",
+      desc_en:  "Assisted with server room inspection and network equipment checks. IT infrastructure was at a basic level — outsourced maintenance, limited internal capability. Data silos between production and management systems were evident; digitalisation needs are pressing but budget-constrained.",
+    },
+  ],
+
+  /* —— 作品集 —— link 填对应 .html 文件名，点卡片跳转新页面
+     cover: 封面图文件名，留空显示占位
+     复制 { } 块新增
+  ———————————————————————————————————————— */
+  works: [
+    {
       cover:    "",
-      tag_zh:   "调研分析",
-      tag_en:   "Research",
-      title_zh: "审计行业初探",
-      title_en: "First Look at Audit",
-      summary_zh: "在信永中和实习期间，对传统审计流程与数字化转型的观察与思考。",
-      summary_en: "Observations on traditional audit workflow and digital transformation, from my internship at ShineWing.",
+      cat:      "摄影",
+      title_zh: "我与自然",
+      title_en: "Nature & I",
+      desc_zh:  "我无数次背着相机，跟随天体的轨迹，在泥土和草地上留下自己的脚印。",
+      desc_en:  "Camera on my back, following the sun, leaving footprints in mud and grass.",
+      link:     "",
+    },
+    {
+      cover:    "",
+      cat:      "故事",
+      title_zh: "故事系列",
+      title_en: "Story Series",
+      desc_zh:  "那些太长、太碎、太私人的事，简历装不下，朋友圈也放不了。",
+      desc_en:  "Too long for a résumé, too personal for social media.",
       link:     "",
     },
   ],
 
-  /* —— 故事系列 —— 每篇对应一个独立 HTML 文件
-     cover:    封面图文件名，留空显示占位
-     link:     对应的 .html 文件名（如 "story-uk.html"）
-     date_zh:  发布日期
-     复制 { } 块新增
-  ———————————————————————————————————————— */
-  blog: [
-    {
-      cover:    "",
-      date_zh:  "2020",
-      date_en:  "2020",
-      tag_zh:   "留学",
-      tag_en:   "Study Abroad",
-      title_zh: "15岁，疫情爆发，我怎么从英国回中国",
-      title_en: "15, Pandemic, Getting Home from the UK",
-      summary_zh: "2020年初，全球边境相继关闭。我独自一人，带着一箱行李和一张改了三次的机票，从英国辗转回国。",
-      summary_en: "Early 2020. Borders were closing. I was alone, one suitcase, a ticket rebooked three times.",
-      link:     "story-pandemic.html",
-    },
-    {
-      cover:    "",
-      date_zh:  "2024",
-      date_en:  "2024",
-      tag_zh:   "成长",
-      tag_en:   "Growing Up",
-      title_zh: "全女校的那几年，悄悄改变了我什么",
-      title_en: "What an All-Girls School Quietly Did to Me",
-      summary_zh: "不是关于女权，只是关于一种微妙的自由——被当作一个完整的人看待，不因性别而先被定义。",
-      summary_en: "Not about feminism. About a quiet kind of freedom — being seen as a whole person before anything else.",
-      link:     "story-girlsschool.html",
-    },
-  ],
-
-  /* —— 技能 —— 在每个分类的 [] 里加 "技能名", 用逗号隔开 */
+  /* —— 社交 & 联系（合并）—— 把 url 和 handle 换成你自己的 */
+  social: {
+    github:           "https://github.com/",
+    github_handle:    "@yolanda",
+    xiaohongshu:      "https://www.xiaohongshu.com/",
+    linkedin:         "https://linkedin.com/",
+    instagram:        "https://instagram.com/",
+    instagram_handle: "@yolanda",
+    email:            "yolanda.chenye@gmail.com",
+    wechat:           true,   /* true = 显示微信二维码入口 */
+  },
   skills: {                   
     "Programming":           ["Python", "Java", "C", "R"],
     "Sports":                ["Archery", "Fencing", "Horse Riding", "Figure Skating", "Surfing", "Hiking"],
@@ -370,23 +326,6 @@ const DATA = {
     },
     */
   ],
-
-  /* —— 社交链接 —— 把 url 换成你自己的 */
-  social: {
-    github:           "https://github.com/",
-    github_handle:    "@yolanda",
-    xiaohongshu:      "https://www.xiaohongshu.com/",
-    linkedin:         "https://linkedin.com/",
-    instagram:        "https://instagram.com/",
-    instagram_handle: "@yolanda",
-  },
-
-  /* —— 联系方式 —— */
-  contact: {
-    email:   "yolanda.chenye@gmail.com",
-    instagram: "https://instagram.com/",
-    instagram_handle: "@yolanda",
-  },
 
   /* —— 飞行足迹 ——————————————————————————
      📊 stats：改数字就行
@@ -542,8 +481,6 @@ nav{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:cente
 .story-place{font-size:14px;font-weight:500;color:#1d1d1f}
 .story-role{font-size:12px;color:#6e6e73;margin-bottom:10px}
 .story-desc{font-size:14px;line-height:1.8;color:#3d3d3f;font-weight:300}
-.story-city{display:inline-flex;align-items:center;gap:6px;margin-top:5px;font-family:'Playfair Display',serif;font-style:italic;font-size:12px;font-weight:400;color:#b0b0b8;letter-spacing:.02em}
-.story-city::before{content:'';display:inline-block;width:14px;height:1px;background:#d2d2d7;flex-shrink:0}
 
 /* PORTFOLIO */
 .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -620,9 +557,11 @@ nav{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:cente
 
 footer{padding:32px 48px;display:flex;justify-content:space-between;max-width:1100px;margin:0 auto}
 .fc{font-size:11px;color:#b0b0b8}
+
 .tr-btn:disabled{opacity:.5;cursor:not-allowed}
 .fu{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .fu.on{opacity:1;transform:translateY(0)}
+
 body.zh .en{display:none!important}
 body.en .zh{display:none!important}
 
@@ -637,188 +576,83 @@ body.en .zh{display:none!important}
   footer{padding:24px 20px;flex-direction:column;gap:6px}
 }
 
-/* ═══════════════════════════════
-   EDUCATION — 纵轴时间线
-═══════════════════════════════ */
-.edu-timeline-v{
-  position:relative;
-  max-width:700px;
-  padding-left:32px;
-}
-.edu-timeline-v::before{
-  content:'';
-  position:absolute;
-  left:5px;top:8px;bottom:8px;
-  width:1.5px;
-  background:linear-gradient(to bottom,#e8e8ed,#d2d2d7 40%,#e8e8ed);
-}
-.edu-vitem{
-  position:relative;
-  padding:0 0 40px 32px;
-  opacity:0;transform:translateX(-12px);
-  transition:opacity .55s ease,transform .55s ease;
-  cursor:pointer;
-}
+/* EDUCATION — 纵轴时间线 */
+.edu-timeline-v{position:relative;max-width:680px;padding-left:28px}
+.edu-timeline-v::before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:1.5px;background:linear-gradient(to bottom,#e8e8ed,#d2d2d7 50%,#e8e8ed)}
+.edu-vitem{position:relative;padding:0 0 38px 28px;cursor:pointer;opacity:0;transform:translateX(-10px);transition:opacity .5s ease,transform .5s ease}
 .edu-vitem.on{opacity:1;transform:translateX(0)}
 .edu-vitem:last-child{padding-bottom:0}
-/* 圆点 */
-.edu-vitem::before{
-  content:'';
-  position:absolute;
-  left:-28px;top:6px;
-  width:11px;height:11px;
-  border-radius:50%;
-  background:#fff;
-  border:1.5px solid #c0c0c8;
-  transition:border-color .25s,background .25s,transform .3s;
-  z-index:1;
-}
-.edu-vitem:hover::before,
-.edu-vitem.active::before{
-  border-color:#1d1d1f;
-  background:#1d1d1f;
-  transform:scale(1.2);
-}
-.edu-v-period{
-  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-  color:#b0b0b8;margin-bottom:6px;
-}
-.edu-v-school{
-  font-family:'Playfair Display',serif;
-  font-size:17px;font-weight:700;letter-spacing:-.01em;
-  color:#1d1d1f;margin-bottom:4px;line-height:1.3;
-}
-.edu-v-degree{font-size:13px;color:#6e6e73;font-weight:300;margin-bottom:4px}
-.edu-v-loc{
-  font-size:10px;letter-spacing:.06em;color:#b0b0b8;
-  display:flex;align-items:center;gap:4px;
-}
-/* 奖项展开面板 */
-.edu-v-awards{
-  overflow:hidden;max-height:0;opacity:0;
-  transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease,margin .3s ease;
-  margin-top:0;
-}
-.edu-vitem.active .edu-v-awards{
-  max-height:400px;opacity:1;margin-top:14px;
-}
-.edu-v-awards-inner{
-  border-left:2px solid #f0f0f2;
-  padding-left:16px;
-}
-.edu-v-ap{
-  display:flex;gap:16px;align-items:baseline;
-  padding:8px 0;border-bottom:1px solid #f8f8fa;
-}
-.edu-v-ap:last-child{border-bottom:none}
-.edu-v-ap-year{font-size:10px;color:#b0b0b8;width:36px;flex-shrink:0}
-.edu-v-ap-title{font-size:13px;font-weight:500;color:#1d1d1f}
-.edu-v-ap-org{font-size:11px;color:#6e6e73;margin-top:1px}
-.edu-v-ap-empty{font-size:12px;color:#c0c0c8;font-style:italic;padding:6px 0}
-/* 展开提示箭头 */
-.edu-v-toggle{
-  display:inline-flex;align-items:center;gap:4px;
-  font-size:10px;letter-spacing:.08em;color:#b0b0b8;
-  margin-top:6px;cursor:pointer;user-select:none;
-  transition:color .2s;
-}
+.edu-vitem::before{content:'';position:absolute;left:-25px;top:5px;width:11px;height:11px;border-radius:50%;background:#fff;border:1.5px solid #c8c8d0;transition:border-color .25s,background .25s,transform .28s;z-index:1}
+.edu-vitem:hover::before,.edu-vitem.edu-active::before{border-color:#1d1d1f;background:#1d1d1f;transform:scale(1.2)}
+.edu-v-period{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b8;margin-bottom:5px}
+.edu-v-school{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#1d1d1f;margin-bottom:3px;line-height:1.3}
+.edu-v-degree{font-size:12px;color:#6e6e73;font-weight:300;margin-bottom:4px}
+.edu-v-loc{font-size:10px;letter-spacing:.06em;color:#b0b0b8;display:flex;align-items:center;gap:4px}
+.edu-v-toggle{display:inline-flex;align-items:center;gap:4px;margin-top:7px;font-size:10px;letter-spacing:.06em;color:#c0c0c8;cursor:pointer;user-select:none;transition:color .2s}
 .edu-vitem:hover .edu-v-toggle{color:#6e6e73}
 .edu-v-toggle svg{transition:transform .3s}
-.edu-vitem.active .edu-v-toggle svg{transform:rotate(180deg)}
+.edu-vitem.edu-active .edu-v-toggle svg{transform:rotate(180deg)}
+.edu-v-awards{overflow:hidden;max-height:0;opacity:0;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s ease,margin .3s ease;margin-top:0}
+.edu-vitem.edu-active .edu-v-awards{max-height:400px;opacity:1;margin-top:12px}
+.edu-v-awards-inner{border-left:2px solid #f0f0f2;padding-left:14px}
+.edu-v-ap{display:flex;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px solid #f8f8fa}
+.edu-v-ap:last-child{border-bottom:none}
+.edu-v-ap-year{font-size:10px;color:#b0b0b8;width:34px;flex-shrink:0}
+.edu-v-ap-title{font-size:13px;font-weight:500;color:#1d1d1f}
+.edu-v-ap-org{font-size:11px;color:#6e6e73;margin-top:1px}
+.edu-v-empty{font-size:12px;color:#c0c0c8;font-style:italic;padding:6px 0}
 
-/* ═══════════════════════════════
-   INDUSTRY — 行业考察
-═══════════════════════════════ */
-.industry-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px}
-.icard{
-  border-radius:16px;overflow:hidden;background:#f5f5f7;
-  text-decoration:none;display:block;
-  transition:transform .28s cubic-bezier(.25,.46,.45,.94),box-shadow .28s;
-  cursor:pointer;
-}
-.icard[href]:hover,.icard.clickable:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
-.icard-cover{
-  width:100%;aspect-ratio:16/9;
-  background:#e8e8ed;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;position:relative;
-}
-.icard-cover img{width:100%;height:100%;object-fit:cover}
-.icard-type{
-  position:absolute;top:12px;left:12px;
-  font-size:9px;letter-spacing:.12em;text-transform:uppercase;
-  padding:4px 10px;border-radius:20px;
-  font-weight:500;
-}
-.icard-type.visit{background:rgba(0,122,255,.12);color:#0066cc}
-.icard-type.research{background:rgba(52,199,89,.12);color:#1a8a36}
-.icard-body{padding:20px}
-.icard-date{font-size:10px;letter-spacing:.1em;color:#b0b0b8;margin-bottom:8px;text-transform:uppercase}
-.icard-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1d1d1f;line-height:1.35;margin-bottom:10px;letter-spacing:-.01em}
-.icard-summary{font-size:13px;line-height:1.75;color:#6e6e73;font-weight:300}
-.icard-arr{display:inline-flex;align-items:center;gap:4px;margin-top:14px;font-size:11px;color:#b0b0b8;letter-spacing:.06em;transition:color .2s,gap .2s}
-.icard[href]:hover .icard-arr,.icard.clickable:hover .icard-arr{color:#1d1d1f;gap:8px}
-@media(max-width:700px){.industry-grid{grid-template-columns:1fr}}
+/* STORY & INDUSTRY共用列表样式 */
+.story-list{max-width:820px}
+.story-item{display:grid;grid-template-columns:180px 1fr;gap:32px;padding:36px 0;border-bottom:1px solid #f0f0f2}
+.story-item:first-child{border-top:1px solid #f0f0f2}
+.story-date{font-size:11px;color:#b0b0b8;letter-spacing:.04em;margin-bottom:4px}
+.story-place{font-size:14px;font-weight:500;color:#1d1d1f;margin-bottom:2px}
+.story-tag{display:inline-block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:20px;background:#f5f5f7;border:1px solid #e8e8ed;color:#6e6e73;margin-top:4px}
+.story-city{display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:#b0b0b8}
+.story-city::before{content:'';display:inline-block;width:12px;height:1px;background:#d2d2d7;flex-shrink:0}
+.story-role{font-size:12px;color:#6e6e73;margin-bottom:8px}
+.story-desc{font-size:14px;line-height:1.8;color:#3d3d3f;font-weight:300}
 
-/* ═══════════════════════════════
-   BLOG — 故事系列
-═══════════════════════════════ */
-.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px}
-.bcard{
-  border-radius:16px;overflow:hidden;background:#fff;
-  border:1px solid #f0f0f2;
-  text-decoration:none;display:block;
-  transition:transform .28s cubic-bezier(.25,.46,.45,.94),box-shadow .28s,border-color .28s;
-}
-.bcard:hover{transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,.08);border-color:#e0e0e5}
-.bcard-cover{
-  width:100%;aspect-ratio:16/9;
-  background:#f5f5f7;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-}
-.bcard-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.bcard:hover .bcard-cover img{transform:scale(1.04)}
-.bcard-cover-ph{
-  width:100%;height:100%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-size:28px;font-weight:700;color:#e8e8ed;
-  letter-spacing:-.02em;
-}
-.bcard-body{padding:22px 24px 26px}
-.bcard-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.bcard-tag{font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;background:#f5f5f7;color:#6e6e73;border:1px solid #e8e8ed}
-.bcard-date{font-size:10px;color:#b0b0b8;letter-spacing:.06em}
-.bcard-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1d1d1f;line-height:1.4;margin-bottom:10px;letter-spacing:-.01em}
-.bcard-summary{font-size:13px;line-height:1.8;color:#6e6e73;font-weight:300}
-.bcard-read{display:inline-flex;align-items:center;gap:5px;margin-top:16px;font-size:11px;letter-spacing:.08em;color:#b0b0b8;transition:color .2s,gap .2s}
-.bcard:hover .bcard-read{color:#1d1d1f;gap:9px}
-@media(max-width:700px){.blog-grid{grid-template-columns:1fr}}
+/* PORTFOLIO — 卡片跳转新页面 */
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pcard{position:relative;border-radius:14px;overflow:hidden;background:#f5f5f7;aspect-ratio:4/3;display:block;text-decoration:none;transition:transform .28s cubic-bezier(.25,.46,.45,.94),box-shadow .28s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.pcard-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.pcard:hover .pcard-img{transform:scale(1.04)}
+.pcard-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#c0c0c8;font-size:11px;letter-spacing:.06em;background:#f5f5f7}
+.pcard-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,0) 55%);opacity:0;transition:opacity .35s;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+.pcard:hover .pcard-overlay{opacity:1}
+.pcard-cat{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px}
+.pcard-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff;line-height:1.3}
+.pcard-arr{font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.6);margin-top:6px;display:flex;align-items:center;gap:4px}
+.soon-card{background:#fafafa;border:1px dashed #e0e0e5;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:160px;aspect-ratio:4/3}
+.soon-card span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c0c0c8}
+
+/* CONNECT — 社交+联系合并区块 */
+.connect-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:900px}
+.connect-social .soc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.soc-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:#f5f5f7;border-radius:14px;text-decoration:none;transition:background .2s,transform .2s;position:relative}
+.soc-card:hover{background:#ebebf0;transform:translateY(-2px)}
+.soc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.soc-name{font-size:13px;font-weight:500;color:#1d1d1f;margin-bottom:1px}
+.soc-handle{font-size:10px;color:#6e6e73}
+.soc-arr{position:absolute;right:14px;color:#c0c0c8;font-size:14px;transition:transform .2s}
+.soc-card:hover .soc-arr{transform:translateX(3px)}
+.connect-contact-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b8;margin-bottom:16px;margin-top:0}
+.con-list{max-width:100%}
+.ci{display:flex;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid #f0f0f2;text-decoration:none;background:none;border-left:none;border-right:none;border-top:none;cursor:pointer;width:100%;text-align:left;transition:padding-left .22s}
+.ci:first-child{border-top:1px solid #f0f0f2}
+.ci:hover{padding-left:8px}
+.cl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b0b0b8;width:80px;flex-shrink:0;transition:color .2s}
+.cv2{font-size:14px;color:#1d1d1f;flex:1}
+.ca{color:#c0c0c8;font-size:14px;opacity:0;transform:translateX(-6px);transition:all .22s}
+.ci:hover .cl{color:#1d1d1f}.ci:hover .ca{opacity:1;transform:translateX(0)}
+@media(max-width:860px){.connect-wrap{grid-template-columns:1fr;gap:36px}}
+@media(max-width:700px){.port-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body class="zh">
-
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="if(event.target===this)closeLightbox()">
-  <button class="lb-close" onclick="closeLightbox()">✕</button>
-  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
-  <button class="lb-next" onclick="lbNav(1)">›</button>
-  <div class="lb-inner">
-    <div class="lb-img-wrap" id="lb-img-wrap"></div>
-    <div class="lb-info">
-      <div class="lb-cat" id="lb-cat"></div>
-      <div class="lb-title" id="lb-title"></div>
-      <div class="lb-desc" id="lb-desc"></div>
-      <a class="lb-link" id="lb-link" target="_blank" style="display:none">
-        查看链接
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-      </a>
-      <div class="lb-dots" id="lb-dots"></div>
-      <div class="lb-counter" id="lb-counter"></div>
-    </div>
-  </div>
-</div>
 
 <div id="wcmodal" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wc-box">
@@ -836,13 +670,11 @@ body.en .zh{display:none!important}
     <li><a href="#about" class="zh">关于</a><a href="#about" class="en">About</a></li>
     <li><a href="#education" class="zh">教育</a><a href="#education" class="en">Education</a></li>
     <li><a href="#skills" class="zh">技能</a><a href="#skills" class="en">Skills</a></li>
-    <li><a href="#story" class="zh">经历</a><a href="#story" class="en">Story</a></li>
-    <li><a href="#portfolio" class="zh">作品</a><a href="#portfolio" class="en">Works</a></li>
+    <li><a href="#story" class="zh">工作经历</a><a href="#story" class="en">Experience</a></li>
     <li><a href="#industry" class="zh">行业考察</a><a href="#industry" class="en">Industry</a></li>
-    <li><a href="#blog" class="zh">故事系列</a><a href="#blog" class="en">Blog</a></li>
-    <li><a href="#social" class="zh">社交</a><a href="#social" class="en">Social</a></li>
+    <li><a href="#portfolio" class="zh">作品</a><a href="#portfolio" class="en">Works</a></li>
+    <li><a href="#connect" class="zh">联系</a><a href="#connect" class="en">Connect</a></li>
     <li><a href="#flights" class="zh">航迹</a><a href="#flights" class="en">Flights</a></li>
-    <li><a href="#contact" class="zh">联系</a><a href="#contact" class="en">Contact</a></li>
   </ul>
   <button class="lang-btn" onclick="toggleLang()">EN / 中文</button>
 </nav>
@@ -884,14 +716,25 @@ body.en .zh{display:none!important}
 </div>
 <div class="divider"></div>
 
-<!-- STORY -->
+<!-- STORY / 工作经历 -->
 <div class="sec fu" id="story">
-  <div class="sec-label">Story</div>
+  <div class="sec-label">Experience</div>
   <h2 class="sec-title zh">所谓工作经历</h2>
   <h2 class="sec-title en">My Story</h2>
-  <p class="con-tagline zh"> 简历里边总是需要垂直的经历、具体的描述和量化的数据，我也只好一遍遍修改，让自己更适合那个框架。我经常被问及为什么过往经验那么杂、为什么不去大厂……我为探索自己的方向、喜好做了许多尝试，这不是错，这不丢人。我不想将它们掩埋，我在这里记录下一个完整版本的我。</p>
-  <p class="con-tagline en">Whether it's a collaboration, a creative exchange, or just saying hello — you're always welcome.</p>
+  <p class="con-tagline zh">简历里边总是需要垂直的经历、具体的描述和量化的数据，我也只好一遍遍修改，让自己更适合那个框架。我不想将它们掩埋，我在这里记录下一个完整版本的我。</p>
+  <p class="con-tagline en">Résumés demand linearity. I don't fit that mould. Here's the full version.</p>
   <div class="story-list" id="story-render"></div>
+</div>
+<div class="divider"></div>
+
+<!-- INDUSTRY / 行业考察 -->
+<div class="sec fu" id="industry">
+  <div class="sec-label">Field Notes</div>
+  <h2 class="sec-title zh">行业考察</h2>
+  <h2 class="sec-title en">Industry Notes</h2>
+  <p class="con-tagline zh">走进去，看一看，记下来。</p>
+  <p class="con-tagline en">Go in, look around, write it down.</p>
+  <div class="story-list" id="industry-render"></div>
 </div>
 <div class="divider"></div>
 
@@ -904,34 +747,21 @@ body.en .zh{display:none!important}
 </div>
 <div class="divider"></div>
 
-<!-- INDUSTRY -->
-<div class="sec fu" id="industry">
-  <div class="sec-label">Field Notes</div>
-  <h2 class="sec-title zh">行业考察</h2>
-  <h2 class="sec-title en">Industry Notes</h2>
-  <p class="con-tagline zh">走访、观察、记录。参观企业与撰写调研，是我理解一个行业最直接的方式。</p>
-  <p class="con-tagline en">Visits, observations, and research — my way of understanding how industries actually work.</p>
-  <div class="industry-grid" id="industry-render"></div>
-</div>
-<div class="divider"></div>
-
-<!-- BLOG -->
-<div class="sec fu" id="blog">
-  <div class="sec-label">Stories</div>
-  <h2 class="sec-title zh">故事系列</h2>
-  <h2 class="sec-title en">Story Series</h2>
-  <p class="con-tagline zh">那些太长、太碎、太私人的事，简历装不下，朋友圈也放不了，就放在这里。</p>
-  <p class="con-tagline en">Too long for a résumé, too personal for social media. Here they live.</p>
-  <div class="blog-grid" id="blog-render"></div>
-</div>
-<div class="divider"></div>
-
-<!-- SOCIAL -->
-<div class="sec fu" id="social">
+<!-- CONNECT 社交+联系合并 -->
+<div class="sec fu" id="connect">
   <div class="sec-label">Connect</div>
   <h2 class="sec-title zh">找到我</h2>
   <h2 class="sec-title en">Find Me</h2>
-  <div class="soc-grid" id="social-render"></div>
+  <div class="connect-wrap">
+    <div class="connect-social">
+      <div class="soc-grid" id="social-render"></div>
+    </div>
+    <div class="connect-contact">
+      <div class="connect-contact-title zh">直接联系</div>
+      <div class="connect-contact-title en">Get In Touch</div>
+      <div class="con-list" id="contact-render"></div>
+    </div>
+  </div>
 </div>
 <div class="divider"></div>
 
@@ -967,18 +797,6 @@ body.en .zh{display:none!important}
   </div>
 </div>
 
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<div class="sec fu" id="contact">
-  <div class="sec-label">Contact</div>
-  <h2 class="sec-title zh">联系我</h2>
-  <h2 class="sec-title en">Get In Touch</h2>
-  <p class="con-tagline zh">欢迎你来。</p>
-  <p class="con-tagline en">Whether it's a collaboration, a creative exchange, or just saying hello — you're always welcome.</p>
-  <div class="con-list" id="contact-render"></div>
-</div>
-
 <footer>
   <span class="fc">© 2025 王彦淳 Yolanda Wang</span>
   <span class="fc">Made with ♥</span>
@@ -989,128 +807,34 @@ body.en .zh{display:none!important}
 function render() {
   const isEn = document.body.classList.contains('en');
 
-  /* education — 纵轴时间线 */
-  const eduWrap = document.getElementById('edu-render');
-  if(eduWrap && DATA.education){
-    eduWrap.innerHTML = DATA.education.map((e,i) => {
-      const matched = (DATA.awards||[]).filter(a => a.school === e.school_en);
-      const hasAwards = matched.length > 0;
-      const awardsHTML = hasAwards
-        ? matched.map(a=>`
-            <div class="edu-v-ap">
-              <div class="edu-v-ap-year">${a.year}</div>
-              <div>
-                <div class="edu-v-ap-title">${isEn ? a.title_en : a.title_zh}</div>
-                <div class="edu-v-ap-org">${isEn ? a.org_en : a.org_zh}</div>
-              </div>
-            </div>`).join('')
-        : `<div class="edu-v-ap-empty">${isEn ? 'No awards recorded.' : '该时期暂无奖项记录。'}</div>`;
-      return `
-        <div class="edu-vitem" style="transition-delay:${i*0.1}s" onclick="toggleEduItem(this)">
-          <div class="edu-v-period">${e.year} — ${isEn ? e.end_en : e.end}</div>
-          <div class="edu-v-school">${isEn ? e.school_en : e.school}</div>
-          <div class="edu-v-degree">${isEn ? e.degree_en : e.degree_zh}</div>
-          <div class="edu-v-loc">
-            <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M5 1C3.343 1 2 2.343 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z" stroke="#c0c0c8" stroke-width=".8"/><circle cx="5" cy="4" r="1" fill="#c0c0c8"/></svg>
-            ${e.location}
-          </div>
-          <div class="edu-v-toggle">
-            <span class="zh">${hasAwards ? '查看荣誉' : '暂无荣誉'}</span>
-            <span class="en">${hasAwards ? 'Awards' : 'No awards'}</span>
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="#b0b0b8" stroke-width="1.2" stroke-linecap="round"/></svg>
-          </div>
-          <div class="edu-v-awards">
-            <div class="edu-v-awards-inner">${awardsHTML}</div>
-          </div>
-        </div>`;
-    }).join('');
-
-    setTimeout(()=>{
-      const items = document.querySelectorAll('.edu-vitem');
-      const ob = new IntersectionObserver(entries=>{
-        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
-      },{threshold:.1});
-      items.forEach(el=>ob.observe(el));
-    },50);
-  }
-
-  /* industry */
-  const industryWrap = document.getElementById('industry-render');
-  if(industryWrap && DATA.industry){
-    industryWrap.innerHTML = DATA.industry.map(item => {
-      const tag = isEn ? item.tag_en : item.tag_zh;
-      const title = isEn ? item.title_en : item.title_zh;
-      const summary = isEn ? item.summary_en : item.summary_zh;
-      const date = isEn ? item.date_en : item.date_zh;
-      const coverHTML = item.cover
-        ? `<img src="${item.cover}" alt="${title}">`
-        : `<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="6" width="28" height="20" rx="3" stroke="#d2d2d7" stroke-width="1.2"/><path d="M10 20l5-6 4 4 2-2 5 4" stroke="#d2d2d7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-      const readMore = isEn ? 'Read more' : '阅读全文';
-      const tag_class = item.type === 'visit' ? 'visit' : 'research';
-      const tag_label = item.type === 'visit'
-        ? (isEn ? 'Site Visit' : '参观走访')
-        : (isEn ? 'Research' : '调研分析');
-      if(item.link){
-        return `<a href="${item.link}" class="icard" target="_blank">
-          <div class="icard-cover">
-            ${coverHTML}
-            <div class="icard-type ${tag_class}">${tag_label}</div>
-          </div>
-          <div class="icard-body">
-            <div class="icard-date">${date}</div>
-            <div class="icard-title">${title}</div>
-            <div class="icard-summary">${summary}</div>
-            <div class="icard-arr">${readMore} <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
-          </div>
-        </a>`;
-      } else {
-        return `<div class="icard">
-          <div class="icard-cover">
-            ${coverHTML}
-            <div class="icard-type ${tag_class}">${tag_label}</div>
-          </div>
-          <div class="icard-body">
-            <div class="icard-date">${date}</div>
-            <div class="icard-title">${title}</div>
-            <div class="icard-summary">${summary}</div>
-          </div>
-        </div>`;
-      }
-    }).join('');
-  }
-
-  /* blog */
-  const blogWrap = document.getElementById('blog-render');
-  if(blogWrap && DATA.blog){
-    blogWrap.innerHTML = DATA.blog.map((b,i) => {
-      const title = isEn ? b.title_en : b.title_zh;
-      const summary = isEn ? b.summary_en : b.summary_zh;
-      const tag = isEn ? b.tag_en : b.tag_zh;
-      const date = isEn ? b.date_en : b.date_zh;
-      const readMore = isEn ? 'Read full story →' : '阅读全文 →';
-      const coverHTML = b.cover
-        ? `<img src="${b.cover}" alt="${title}">`
-        : `<div class="bcard-cover-ph">${String(i+1).padStart(2,'0')}</div>`;
-      return `<a href="${b.link || '#'}" class="bcard" ${b.link ? '' : 'onclick="return false"'}>
-        <div class="bcard-cover">${coverHTML}</div>
-        <div class="bcard-body">
-          <div class="bcard-meta">
-            <span class="bcard-tag">${tag}</span>
-            <span class="bcard-date">${date}</span>
-          </div>
-          <div class="bcard-title">${title}</div>
-          <div class="bcard-summary">${summary}</div>
-          <div class="bcard-read">${readMore}</div>
-        </div>
-      </a>`;
-    }).join('');
-  }
-
   /* bio */
   const ez = document.getElementById('eyebrow-zh'); ez.textContent = DATA.bio.eyebrow_zh; ez.style.display = DATA.bio.eyebrow_zh ? '' : 'none';
   const ee = document.getElementById('eyebrow-en'); ee.textContent = DATA.bio.eyebrow_en; ee.style.display = DATA.bio.eyebrow_en ? '' : 'none';
   document.getElementById('story-zh').textContent = DATA.bio.story_zh;
   document.getElementById('story-en').textContent = DATA.bio.story_en;
+
+  /* education — 纵轴时间线，点击展开奖项 */
+  const eduWrap = document.getElementById('edu-render');
+  if(eduWrap && DATA.education){
+    eduWrap.innerHTML = DATA.education.map((e,i) => {
+      const matched = (DATA.awards||[]).filter(a => a.school === e.school_en);
+      const awardsHTML = matched.length
+        ? matched.map(a=>`<div class="edu-v-ap"><div class="edu-v-ap-year">${a.year}</div><div><div class="edu-v-ap-title">${isEn?a.title_en:a.title_zh}</div><div class="edu-v-ap-org">${isEn?a.org_en:a.org_zh}</div></div></div>`).join('')
+        : `<div class="edu-v-empty">${isEn?'No awards recorded.':'该时期暂无奖项。'}</div>`;
+      return `<div class="edu-vitem" style="transition-delay:${i*0.09}s" onclick="toggleEdu(this)">
+        <div class="edu-v-period">${e.year} — ${isEn?e.end_en:e.end}</div>
+        <div class="edu-v-school">${isEn?e.school_en:e.school}</div>
+        <div class="edu-v-degree">${isEn?e.degree_en:e.degree_zh}</div>
+        <div class="edu-v-loc"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M5 1C3.343 1 2 2.343 2 4c0 2.5 3 5 3 5s3-2.5 3-5c0-1.657-1.343-3-3-3z" stroke="#c0c0c8" stroke-width=".8"/><circle cx="5" cy="4" r="1" fill="#c0c0c8"/></svg>${e.location}</div>
+        <div class="edu-v-toggle"><span class="zh">${matched.length?'荣誉奖项':'暂无奖项'}</span><span class="en">${matched.length?'Awards':'No awards'}</span><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="#b0b0b8" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <div class="edu-v-awards"><div class="edu-v-awards-inner">${awardsHTML}</div></div>
+      </div>`;
+    }).join('');
+    setTimeout(()=>{
+      const ob = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.1});
+      document.querySelectorAll('.edu-vitem').forEach(el=>ob.observe(el));
+    },50);
+  }
 
   /* skills */
   document.getElementById('skills-render').innerHTML =
@@ -1122,191 +846,99 @@ function render() {
         </div>
       </div>`).join('');
 
-  /* story */
-  document.getElementById('story-render').innerHTML =
-    DATA.stories.length
-      ? DATA.stories.map(s => `
-          <div class="story-item">
-            <div>
-              <div class="story-date">${isEn ? s.date_en : s.date_zh}</div>
-              <div class="story-place">${s.place}</div>
-              ${s.city ? `<div class="story-city">${s.city}</div>` : ''}
-            </div>
-            <div>
-              <div class="story-role">${isEn ? s.role_en : s.role_zh}</div>
-              <p class="story-desc">${isEn ? s.desc_en : s.desc_zh}</p>
-            </div>
-          </div>`).join('')
-      : '<p style="color:#b0b0b8;font-size:13px">暂无内容</p>';
+  /* story / 工作经历 */
+  const storyWrap = document.getElementById('story-render');
+  if(storyWrap) storyWrap.innerHTML = DATA.stories.length
+    ? DATA.stories.map(s => `
+        <div class="story-item">
+          <div>
+            <div class="story-date">${isEn?s.date_en:s.date_zh}</div>
+            <div class="story-place">${s.place}</div>
+            ${s.city?`<div class="story-city">${s.city}</div>`:''}
+          </div>
+          <div>
+            <div class="story-role">${isEn?s.role_en:s.role_zh}</div>
+            <p class="story-desc">${isEn?s.desc_en:s.desc_zh}</p>
+          </div>
+        </div>`).join('')
+    : '<p style="color:#b0b0b8;font-size:13px">暂无内容</p>';
 
-  /* works */
+  /* industry / 行业考察 — 和工作经历同款列表 */
+  const industryWrap = document.getElementById('industry-render');
+  if(industryWrap && DATA.industry) industryWrap.innerHTML = DATA.industry.length
+    ? DATA.industry.map(item => `
+        <div class="story-item">
+          <div>
+            <div class="story-date">${isEn?item.date_en:item.date_zh}</div>
+            <div class="story-place">${item.place}</div>
+            ${item.city?`<div class="story-city">${item.city}</div>`:''}
+            <div class="story-tag">${isEn?item.tag_en:item.tag_zh}</div>
+          </div>
+          <div>
+            <div class="story-role">${isEn?item.title_en:item.title_zh}</div>
+            <p class="story-desc">${isEn?item.desc_en:item.desc_zh}</p>
+          </div>
+        </div>`).join('')
+    : '<p style="color:#b0b0b8;font-size:13px">暂无内容</p>';
+
+  /* works — 点卡片跳转新页面 */
   const soons = `
-    <div class="soon-card">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#d2d2d7" stroke-width="1"/><path d="M12 7v5l3 3" stroke="#d2d2d7" stroke-width="1.2" stroke-linecap="round"/></svg>
-      <span class="zh">更多作品即将上线</span><span class="en">More works coming soon</span>
-    </div>
-    <div class="soon-card">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#d2d2d7" stroke-width="1.2" stroke-linecap="round"/></svg>
-      <span class="zh">敬请期待</span><span class="en">Stay tuned</span>
-    </div>`;
+    <div class="soon-card"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#d2d2d7" stroke-width="1"/><path d="M12 7v5l3 3" stroke="#d2d2d7" stroke-width="1.2" stroke-linecap="round"/></svg><span class="zh">更多作品即将上线</span><span class="en">More coming soon</span></div>
+    <div class="soon-card"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#d2d2d7" stroke-width="1.2" stroke-linecap="round"/></svg><span class="zh">敬请期待</span><span class="en">Stay tuned</span></div>`;
   document.getElementById('works-render').innerHTML =
-    DATA.works.map((w,i) => `
-      <div class="pcard" onclick="openLightbox(${i})">
-        ${w.image
-          ? `<img class="pcard-img" src="${w.image}" alt="${isEn ? w.title_en : w.title_zh}" loading="lazy">`
-          : `<div class="pcard-ph">
-               <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="#d2d2d7" stroke-width="1.2"/><circle cx="9" cy="11" r="2.5" stroke="#d2d2d7" stroke-width="1.2"/><path d="M2 19l6-5 4 4 3-3 7 5" stroke="#d2d2d7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-               <span>${isEn ? w.title_en : w.title_zh}</span>
-             </div>`}
-        <div class="pcard-overlay">
-          <div class="pcard-cat">${w.cat}</div>
-          <div class="pcard-title">${isEn ? w.title_en : w.title_zh}</div>
-        </div>
-      </div>`).join('') + soons;
+    DATA.works.map(w => {
+      const title = isEn ? w.title_en : w.title_zh;
+      const coverHTML = w.cover
+        ? `<img class="pcard-img" src="${w.cover}" alt="${title}" loading="lazy">`
+        : `<div class="pcard-ph"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="3" stroke="#d2d2d7" stroke-width="1.2"/><circle cx="9" cy="11" r="2.5" stroke="#d2d2d7" stroke-width="1.2"/><path d="M2 19l6-5 4 4 3-3 7 5" stroke="#d2d2d7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>${title}</span></div>`;
+      const readLabel = isEn ? 'Open →' : '查看 →';
+      if(w.link){
+        return `<a href="${w.link}" class="pcard" target="_blank">${coverHTML}<div class="pcard-overlay"><div class="pcard-cat">${w.cat}</div><div class="pcard-title">${title}</div><div class="pcard-arr">${readLabel}</div></div></a>`;
+      } else {
+        return `<div class="pcard">${coverHTML}<div class="pcard-overlay"><div class="pcard-cat">${w.cat}</div><div class="pcard-title">${title}</div></div></div>`;
+      }
+    }).join('') + soons;
 
-  /* social */
+  /* connect — 社交 + 联系合并 */
   const sc = DATA.social;
   document.getElementById('social-render').innerHTML = `
     <a href="${sc.github}" target="_blank" class="soc-card">
-      <div class="soc-icon" style="background:#f0ebff"><svg width="18" height="18" viewBox="0 0 24 24" fill="#7b2fff"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></div>
-      <div><div class="soc-name">GitHub</div><div class="soc-handle">${sc.github_handle}</div></div>
-      <div class="soc-arr">›</div>
+      <div class="soc-icon" style="background:#f0ebff"><svg width="16" height="16" viewBox="0 0 24 24" fill="#7b2fff"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></div>
+      <div><div class="soc-name">GitHub</div><div class="soc-handle">${sc.github_handle}</div></div><div class="soc-arr">›</div>
     </a>
     <a href="${sc.linkedin}" target="_blank" class="soc-card">
-      <div class="soc-icon" style="background:#e6f4ff"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0077b5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
-      <div><div class="soc-name">LinkedIn</div><div class="soc-handle zh">领英</div><div class="soc-handle en">Yolanda Wang</div></div>
-      <div class="soc-arr">›</div>
+      <div class="soc-icon" style="background:#e6f4ff"><svg width="14" height="14" viewBox="0 0 24 24" fill="#0077b5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+      <div><div class="soc-name">LinkedIn</div><div class="soc-handle zh">领英</div><div class="soc-handle en">Yolanda Wang</div></div><div class="soc-arr">›</div>
     </a>
     <a href="${sc.xiaohongshu}" target="_blank" class="soc-card">
-      <div class="soc-icon" style="background:#fff0f4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fe2c55" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg></div>
-      <div><div class="soc-name">小红书</div><div class="soc-handle">RED / XHS</div></div>
-      <div class="soc-arr">›</div>
+      <div class="soc-icon" style="background:#fff0f4"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fe2c55" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg></div>
+      <div><div class="soc-name">小红书</div><div class="soc-handle">RED / XHS</div></div><div class="soc-arr">›</div>
     </a>
     <a href="${sc.instagram}" target="_blank" class="soc-card">
-      <div class="soc-icon" style="background:#fff8e6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#e1306c" stroke="none"/></svg></div>
-      <div><div class="soc-name">Instagram</div><div class="soc-handle">${sc.instagram_handle}</div></div>
-      <div class="soc-arr">›</div>
+      <div class="soc-icon" style="background:#fff0f8"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#e1306c" stroke="none"/></svg></div>
+      <div><div class="soc-name">Instagram</div><div class="soc-handle">${sc.instagram_handle}</div></div><div class="soc-arr">›</div>
     </a>`;
 
-  /* contact */
-  const ct = DATA.contact;
   document.getElementById('contact-render').innerHTML = `
-    <a href="mailto:${ct.email}" class="ci">
-      <span class="cl">Email</span><span class="cv2">${ct.email}</span><span class="ca">›</span>
+    <a href="mailto:${sc.email}" class="ci">
+      <span class="cl">Email</span><span class="cv2">${sc.email}</span><span class="ca">›</span>
     </a>
-    <button class="ci" onclick="document.getElementById('wcmodal').classList.add('open')">
+    ${sc.wechat ? `<button class="ci" onclick="document.getElementById('wcmodal').classList.add('open')">
       <span class="cl">WeChat</span>
       <span class="cv2 zh">点击查看二维码</span>
       <span class="cv2 en">Tap for QR code</span>
       <span class="ca">›</span>
-    </button>
-    <a href="${ct.instagram}" target="_blank" class="ci">
-      <span class="cl">Instagram</span><span class="cv2">${ct.instagram_handle}</span><span class="ca">›</span>
-    </a>`;
+    </button>` : ''}`;
 }
 
-/* ── Lightbox ── */
-let lbIndex = 0;      // 当前作品索引
-let lbImgIndex = 0;   // 当前作品内的图片索引
+/* ── Education toggle ── */
 const isEn = () => document.body.classList.contains('en');
 
-function getImages(w) {
-  // 兼容新的 images[] 和旧的 image 字段
-  if (w.images && w.images.length) return w.images;
-  if (w.image) return [w.image];
-  return [];
+function toggleEdu(el) {
+  const isActive = el.classList.contains('edu-active');
+  document.querySelectorAll('.edu-vitem.edu-active').forEach(v => v.classList.remove('edu-active'));
+  if(!isActive) el.classList.add('edu-active');
 }
-
-function openLightbox(i) {
-  lbIndex = i;
-  lbImgIndex = 0;
-  renderLightbox();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-/* 作品间切换（←→按钮） */
-function lbNav(dir) {
-  lbIndex = (lbIndex + dir + DATA.works.length) % DATA.works.length;
-  lbImgIndex = 0;
-  renderLightbox();
-}
-
-/* 作品内图片切换 */
-function lbImgNav(dir) {
-  const imgs = getImages(DATA.works[lbIndex]);
-  lbImgIndex = (lbImgIndex + dir + imgs.length) % imgs.length;
-  renderLightbox();
-}
-
-function lbGoImg(i) {
-  lbImgIndex = i;
-  renderLightbox();
-}
-
-function renderLightbox() {
-  const w = DATA.works[lbIndex];
-  const en = isEn();
-  const imgs = getImages(w);
-  const total = imgs.length;
-
-  /* 图片区 */
-  const imgWrap = document.getElementById('lb-img-wrap');
-  if (total > 0) {
-    imgWrap.innerHTML = `
-      <img src="${imgs[lbImgIndex]}" alt="${en ? w.title_en : w.title_zh}" style="transition:opacity .25s ease">
-      ${total > 1 ? `
-        <button onclick="lbImgNav(-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.45);border:none;cursor:pointer;color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.7)'" onmouseout="this.style.background='rgba(0,0,0,.45)'">‹</button>
-        <button onclick="lbImgNav(1)"  style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.45);border:none;cursor:pointer;color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.7)'" onmouseout="this.style.background='rgba(0,0,0,.45)'">›</button>
-      ` : ''}`;
-    imgWrap.style.position = 'relative';
-  } else {
-    imgWrap.innerHTML = `<div class="lb-img-ph">暂无图片 · No image</div>`;
-  }
-
-  /* 文字 */
-  document.getElementById('lb-cat').textContent = w.cat || '';
-  document.getElementById('lb-title').textContent = en ? w.title_en : w.title_zh;
-  document.getElementById('lb-desc').textContent = en ? w.desc_en : w.desc_zh;
-
-  /* 链接 */
-  const lnk = document.getElementById('lb-link');
-  if (w.link) { lnk.href = w.link; lnk.style.display = 'inline-flex'; }
-  else { lnk.style.display = 'none'; }
-
-  /* 小圆点指示器（超过5张改用数字） */
-  const dots = document.getElementById('lb-dots');
-  const counter = document.getElementById('lb-counter');
-  if (total > 1) {
-    if (total <= 8) {
-      dots.innerHTML = Array.from({length: total}, (_,i) =>
-        `<button class="lb-dot${i===lbImgIndex?' active':''}" onclick="lbGoImg(${i})"></button>`
-      ).join('');
-      dots.style.display = 'flex';
-      counter.style.display = 'none';
-    } else {
-      dots.style.display = 'none';
-      counter.textContent = `${lbImgIndex + 1} / ${total}`;
-      counter.style.display = 'block';
-    }
-  } else {
-    dots.style.display = 'none';
-    counter.style.display = 'none';
-  }
-}
-
-/* 键盘：← → 切图片，shift+←→ 切作品，Esc关闭 */
-document.addEventListener('keydown', e => {
-  if (!document.getElementById('lightbox').classList.contains('open')) return;
-  const imgs = getImages(DATA.works[lbIndex]);
-  if (e.key === 'ArrowLeft')  { if(imgs.length>1) lbImgNav(-1); else lbNav(-1); }
-  if (e.key === 'ArrowRight') { if(imgs.length>1) lbImgNav(1);  else lbNav(1); }
-  if (e.key === 'Escape')     closeLightbox();
-});
 
 function toggleLang() {
   const isZh = document.body.classList.contains('zh');
@@ -1388,13 +1020,6 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
 }, { threshold: .1 });
 document.querySelectorAll('.fu').forEach(el => obs.observe(el));
-
-/* ── Education item toggle ── */
-function toggleEduItem(el) {
-  const isActive = el.classList.contains('active');
-  document.querySelectorAll('.edu-vitem.active').forEach(v => v.classList.remove('active'));
-  if (!isActive) el.classList.add('active');
-}
 
 /* ════════════════════════════════════
    FLIGHT MAP
