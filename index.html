@@ -98,51 +98,56 @@ const DATA = {
     },
   ],
 
-  /* —— 荣誉奖项 —— 复制 { } 块新增 */
+  /* —— 荣誉奖项 —— 复制 { } 块新增，school 填对应 school_en */
   awards: [
     {
-      year:    "2023",
+      year:     "2023",
+      school:   "Godolphin School",
       title_zh: "BPhO Senior Physics Challenge",
       title_en: "BPhO Senior Physics Challenge",
-      org_zh:  "Silver Award",
-      org_en:  "Silver Award",
+      org_zh:   "Silver Award",
+      org_en:   "Silver Award",
     },
     {
-      year:    "2022",
+      year:     "2022",
+      school:   "Oxford International College",
       title_zh: "British Mathematical Olympiad",
       title_en: "British Mathematical Olympiad",
-      org_zh:  "Round 1",
-      org_en:  "Round 1",
+      org_zh:   "Round 1",
+      org_en:   "Round 1",
     },
     {
-      year:    "2022",
+      year:     "2022",
+      school:   "Oxford International College",
       title_zh: "Senior Mathematical Challenge",
       title_en: "Senior Mathematical Challenge",
-      org_zh:  "Gold Certificate",
-      org_en:  "Gold Certificate",
+      org_zh:   "Gold Certificate",
+      org_en:   "Gold Certificate",
     },
     {
-      year:    "2021",
+      year:     "2021",
+      school:   "Maple Glory United School",
       title_zh: "High School Mathematical Contest in Modelling",
       title_en: "High School Mathematical Contest in Modelling",
-      org_zh:  "Honorable Mention",
-      org_en:  "Honorable Mention",
+      org_zh:   "Honorable Mention",
+      org_en:   "Honorable Mention",
     },
     {
-      year:    "2021",
+      year:     "2021",
+      school:   "Maple Glory United School",
       title_zh: "ASDAN ALL-STAR Competition",
       title_en: "ASDAN ALL-STAR Competition",
-      org_zh:  "Bronze Award",
-      org_en:  "Bronze Award",
+      org_zh:   "Bronze Award",
+      org_en:   "Bronze Award",
     },
     {
-      year:    "2020",
+      year:     "2020",
+      school:   "Roedean School",
       title_zh: "ASDAN Business Simulation",
       title_en: "ASDAN Business Simulation",
-      org_zh:  "Silver Award",
-      org_en:  "Silver Award",
+      org_zh:   "Silver Award",
+      org_en:   "Silver Award",
     },
-
   ],
 
   /* —— 技能 —— 在每个分类的 [] 里加 "技能名", 用逗号隔开 */
@@ -301,8 +306,11 @@ const DATA = {
 
   /* —— 社交链接 —— 把 url 换成你自己的 */
   social: {
-    linkedin:  "https://linkedin.com/",
+    github:           "https://github.com/",
     github_handle:    "@yolanda",
+    xiaohongshu:      "https://www.xiaohongshu.com/",
+    linkedin:         "https://linkedin.com/",
+    instagram:        "https://instagram.com/",
     instagram_handle: "@yolanda",
   },
 
@@ -642,6 +650,35 @@ body.en .zh{display:none!important}
   width:14px;height:1px;
   background:#d2d2d7;flex-shrink:0;
 }
+
+/* AWARDS PANEL */
+.edu-item{cursor:pointer}
+.edu-item.active .edu-dot{background:#1d1d1f;transform:scale(1.2)}
+.awards-panel{
+  max-width:820px;margin:32px 0 0;
+  overflow:hidden;
+  max-height:0;
+  transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .35s ease;
+  opacity:0;
+}
+.awards-panel.open{max-height:600px;opacity:1}
+.awards-panel-inner{
+  border-top:1px solid #f0f0f2;
+  padding:24px 0 8px;
+}
+.awards-panel-school{
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:#b0b0b8;margin-bottom:16px;
+}
+.ap-item{
+  display:grid;grid-template-columns:64px 1fr;gap:20px;
+  padding:14px 0;border-bottom:1px solid #f8f8fa;
+}
+.ap-item:last-child{border-bottom:none}
+.ap-year{font-size:11px;color:#b0b0b8;letter-spacing:.04em;padding-top:1px}
+.ap-title{font-size:14px;font-weight:500;color:#1d1d1f;margin-bottom:2px}
+.ap-org{font-size:12px;color:#6e6e73}
+.ap-empty{font-size:13px;color:#c0c0c8;font-style:italic;padding:8px 0}
 </style>
 </head>
 <body class="zh">
@@ -681,8 +718,7 @@ body.en .zh{display:none!important}
   <div class="nav-logo">Yolanda Wang</div>
   <ul class="nav-links">
     <li><a href="#about" class="zh">关于</a><a href="#about" class="en">About</a></li>
-    <li><a href="#education" class="zh">教育</a><a href="#education" class="en">Education</a></li>
-    <li><a href="#awards" class="zh">荣誉</a><a href="#awards" class="en">Awards</a></li>
+    <li><a href="#education" class="zh">教育 & 荣誉</a><a href="#education" class="en">Education</a></li>
     <li><a href="#skills" class="zh">技能</a><a href="#skills" class="en">Skills</a></li>
     <li><a href="#story" class="zh">故事</a><a href="#story" class="en">Story</a></li>
     <li><a href="#portfolio" class="zh">作品</a><a href="#portfolio" class="en">Works</a></li>
@@ -721,14 +757,14 @@ body.en .zh{display:none!important}
     <div class="edu-timeline" id="edu-render"></div>
   </div>
 </div>
-<div class="divider"></div>
 
-<!-- AWARDS -->
-<div class="sec" id="awards">
-  <div class="sec-label fu">Honours & Awards</div>
-  <h2 class="sec-title fu zh">荣誉奖项</h2>
-  <h2 class="sec-title fu en">Honours & Awards</h2>
-  <div class="awards-list" id="awards-render"></div>
+<div id="awards-panel-wrap" class="sec" style="padding-top:0;max-width:1100px">
+  <div class="awards-panel" id="awards-panel">
+    <div class="awards-panel-inner">
+      <div class="awards-panel-school" id="awards-panel-school"></div>
+      <div id="awards-panel-list"></div>
+    </div>
+  </div>
 </div>
 <div class="divider"></div>
 
@@ -826,34 +862,11 @@ body.en .zh{display:none!important}
 function render() {
   const isEn = document.body.classList.contains('en');
 
-  /* awards */
-  const awardsWrap = document.getElementById('awards-render');
-  if(awardsWrap && DATA.awards){
-    if(DATA.awards.length === 0){
-      awardsWrap.innerHTML = '<div class="award-empty zh">暂无奖项</div><div class="award-empty en">No awards yet</div>';
-    } else {
-      awardsWrap.innerHTML = DATA.awards.map((a,i) => `
-        <div class="award-item" style="transition-delay:${i*0.08}s">
-          <div class="award-year">${a.year}</div>
-          <div class="award-body">
-            <div class="award-title">${isEn ? a.title_en : a.title_zh}</div>
-            <div class="award-org">${isEn ? a.org_en : a.org_zh}</div>
-          </div>
-        </div>`).join('');
-      setTimeout(()=>{
-        const ob = new IntersectionObserver(entries=>{
-          entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
-        },{threshold:.15});
-        document.querySelectorAll('.award-item').forEach(el=>ob.observe(el));
-      },50);
-    }
-  }
-
   /* education */
   const eduWrap = document.getElementById('edu-render');
   if(eduWrap && DATA.education){
     eduWrap.innerHTML = DATA.education.map((e,i) => `
-      <div class="edu-item" style="transition-delay:${i*0.12}s">
+      <div class="edu-item" style="transition-delay:${i*0.12}s" onclick="toggleAwards('${e.school_en}', this)">
         <div class="edu-top">
           <div class="edu-year">${e.year}<span> — ${isEn ? e.end_en : e.end}</span></div>
           <div class="edu-dot"></div>
@@ -871,7 +884,6 @@ function render() {
         </div>
       </div>`).join('');
 
-    /* 滚动进入动画 */
     setTimeout(()=>{
       const items = document.querySelectorAll('.edu-item');
       const ob = new IntersectionObserver(entries => {
@@ -880,7 +892,6 @@ function render() {
       items.forEach(el => ob.observe(el));
     }, 50);
 
-    /* 鼠标拖拽横向滚动 */
     const tl = eduWrap;
     let isDown=false, startX=0, scrollLeft=0;
     tl.addEventListener('mousedown', e=>{ isDown=true; startX=e.pageX-tl.offsetLeft; scrollLeft=tl.scrollLeft; });
@@ -1176,6 +1187,46 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
 }, { threshold: .1 });
 document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+/* ── Awards Panel ── */
+let _activeSchool = null;
+
+function toggleAwards(schoolName, el) {
+  const panel = document.getElementById('awards-panel');
+  const list  = document.getElementById('awards-panel-list');
+  const label = document.getElementById('awards-panel-school');
+  const en    = document.body.classList.contains('en');
+
+  if (_activeSchool === schoolName) {
+    _activeSchool = null;
+    panel.classList.remove('open');
+    document.querySelectorAll('.edu-item').forEach(el => el.classList.remove('active'));
+    return;
+  }
+
+  _activeSchool = schoolName;
+  document.querySelectorAll('.edu-item').forEach(el => el.classList.remove('active'));
+  el.classList.add('active');
+
+  const matched = (DATA.awards || []).filter(a => a.school === schoolName);
+  label.textContent = schoolName;
+  list.innerHTML = matched.length
+    ? matched.map(a => `
+        <div class="ap-item">
+          <div class="ap-year">${a.year}</div>
+          <div>
+            <div class="ap-title">${en ? a.title_en : a.title_zh}</div>
+            <div class="ap-org">${en ? a.org_en : a.org_zh}</div>
+          </div>
+        </div>`).join('')
+    : `<div class="ap-empty">${en ? 'No awards recorded for this period.' : '该时期暂无奖项记录。'}</div>`;
+
+  panel.classList.add('open');
+  setTimeout(() => {
+    document.getElementById('awards-panel-wrap')
+      .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 100);
+}
 
 /* ════════════════════════════════════
    FLIGHT MAP
