@@ -863,7 +863,45 @@ body.en .zh{display:none!important}
 .flight-tooltip-svg{position:absolute;background:rgba(255,255,255,.92);border:none;border-radius:8px;padding:6px 12px;font-size:11px;color:#1d1d1f;pointer-events:none;display:none;white-space:nowrap;font-family:'Noto Sans SC',sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.18)}
 .flights-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px}
 .fl-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#6e6e73;letter-spacing:.04em}
-@media(max-width:860px){.flights-wrap{padding:0 20px}}
+/* ALBUM EXPAND PAGE */
+#album-page{
+  position:fixed;inset:0;z-index:600;
+  background:#fff;overflow-y:auto;
+  display:none;flex-direction:column;
+}
+#album-page.open{display:flex}
+.album-hero{width:100%;max-height:60vw;overflow:hidden;position:relative;background:#0f0f12;flex-shrink:0}
+.album-hero img{width:100%;height:100%;object-fit:cover;display:block;max-height:56vw}
+.album-hero-ph{width:100%;height:300px;background:#0f0f12}
+.album-meta{padding:28px 32px 20px}
+.album-meta-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#1d1d1f;letter-spacing:-.02em;margin-bottom:8px}
+.album-meta-desc{font-size:14px;line-height:1.85;color:#3d3d3f;font-weight:300;max-width:600px;margin-bottom:16px}
+.album-meta-cat{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#b0b0b8}
+.album-back{
+  position:absolute;top:20px;left:20px;
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;color:#fff;background:rgba(0,0,0,.35);
+  border:none;border-radius:20px;padding:6px 14px;cursor:pointer;
+  backdrop-filter:blur(8px);transition:background .2s;z-index:2;
+}
+.album-back:hover{background:rgba(0,0,0,.55)}
+.album-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:3px;
+  padding:3px;
+}
+.album-grid-item{
+  aspect-ratio:3/4;overflow:hidden;cursor:pointer;background:#0f0f12;
+}
+.album-grid-item img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.25,.46,.45,.94);
+}
+.album-grid-item:hover img{transform:scale(1.04)}
+@media(max-width:600px){
+  .album-meta{padding:20px}
+  .album-meta-title{font-size:22px}
+  .album-hero img{max-height:72vw}
+}
 </style>
 </head>
 <body class="zh">
@@ -887,6 +925,21 @@ body.en .zh{display:none!important}
       <div class="lb-counter" id="lb-counter"></div>
     </div>
   </div>
+</div>
+
+<!-- ALBUM EXPAND PAGE -->
+<div id="album-page">
+  <div class="album-hero" id="album-hero">
+    <button class="album-back" onclick="closeAlbum()">← 返回 · Back</button>
+    <img id="album-hero-img" src="" alt="" style="display:none">
+    <div class="album-hero-ph" id="album-hero-ph"></div>
+  </div>
+  <div class="album-meta">
+    <div class="album-meta-cat" id="album-meta-cat"></div>
+    <div class="album-meta-title" id="album-meta-title"></div>
+    <div class="album-meta-desc" id="album-meta-desc"></div>
+  </div>
+  <div class="album-grid" id="album-grid"></div>
 </div>
 
 <div id="wcmodal" onclick="if(event.target===this)this.classList.remove('open')">
@@ -1178,7 +1231,7 @@ function render() {
             </div>
             <div>
               <div class="story-role">${isEn ? s.role_en : s.role_zh}</div>
-              <p class="story-desc">${isEn ? s.desc_en : s.desc_zh}</p>
+              <p class="story-desc">${(isEn ? s.desc_en : s.desc_zh).replace(/\n/g,'<br>')}</p>
             </div>
           </div>`).join('')
       : '<p style="color:#b0b0b8;font-size:13px">暂无内容</p>';
@@ -1198,7 +1251,7 @@ function render() {
       const imgs = getImages(w);
       const cover = imgs[0] || null;
       return `
-      <div class="pcard" onclick="openLightbox(${i},'mine')">
+      <div class="pcard" onclick="openAlbum(${i},'mine')">
         ${cover
           ? `<img class="pcard-img" src="${cover}" alt="${isEn ? w.title_en : w.title_zh}" loading="lazy">`
           : `<div class="pcard-ph">
@@ -1221,7 +1274,7 @@ function render() {
       const imgs = getImages(w);
       const cover = imgs[0] || null;
       return `
-      <div class="pcard" onclick="openLightbox(${i},'others')">
+      <div class="pcard" onclick="openAlbum(${i},'others')">
         ${cover
           ? `<img class="pcard-img" src="${cover}" alt="${isEn ? w.title_en : w.title_zh}" loading="lazy">`
           : `<div class="pcard-ph">
@@ -1326,7 +1379,10 @@ function openLightbox(i, dataset) {
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
+  // 如果相册页还开着，保持 overflow hidden
+  if(!document.getElementById('album-page').classList.contains('open')) {
+    document.body.style.overflow = '';
+  }
 }
 
 /* 作品间切换（←→按钮） */
@@ -1373,7 +1429,7 @@ function renderLightbox() {
   /* 文字 */
   document.getElementById('lb-cat').textContent = w.cat || '';
   document.getElementById('lb-title').textContent = en ? w.title_en : w.title_zh;
-  document.getElementById('lb-desc').textContent = en ? w.desc_en : w.desc_zh;
+  document.getElementById('lb-desc').innerHTML = (en ? w.desc_en : w.desc_zh).replace(/\n/g,'<br>');
 
   /* 链接 */
   const lnk = document.getElementById('lb-link');
@@ -1738,6 +1794,62 @@ document.querySelectorAll('.fu').forEach(el => obs.observe(el));
   }, { threshold: 0.2 });
   mapObs.observe(svg);
 })();
+
+/* ── Album Expand Page ── */
+let albumDataset = 'mine';
+let albumIndex = 0;
+
+function openAlbum(i, dataset) {
+  albumDataset = dataset || 'mine';
+  albumIndex = i;
+  const data = dataset === 'others' ? (DATA.works_others || []) : DATA.works;
+  const w = data[i];
+  const en = isEn();
+  const imgs = getImages(w);
+
+  // hero image
+  const heroImg = document.getElementById('album-hero-img');
+  const heroPh  = document.getElementById('album-hero-ph');
+  if(imgs.length) {
+    heroImg.src = imgs[0];
+    heroImg.alt = en ? w.title_en : w.title_zh;
+    heroImg.style.display = 'block';
+    heroPh.style.display  = 'none';
+  } else {
+    heroImg.style.display = 'none';
+    heroPh.style.display  = 'block';
+  }
+
+  // meta
+  document.getElementById('album-meta-cat').textContent   = w.cat || '';
+  document.getElementById('album-meta-title').textContent = en ? w.title_en : w.title_zh;
+  document.getElementById('album-meta-desc').innerHTML    = (en ? w.desc_en : w.desc_zh).replace(/\n/g,'<br>');
+
+  // grid — all images, clicking opens lightbox at that index
+  document.getElementById('album-grid').innerHTML = imgs.map((src, idx) => `
+    <div class="album-grid-item" onclick="openLightboxAt(${i},'${dataset}',${idx})">
+      <img src="${src}" alt="" loading="lazy">
+    </div>
+  `).join('');
+
+  document.getElementById('album-page').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAlbum() {
+  document.getElementById('album-page').classList.remove('open');
+  document.getElementById('album-page').scrollTop = 0;
+  document.body.style.overflow = '';
+}
+
+function openLightboxAt(workIndex, dataset, imgIndex) {
+  lbDataset  = dataset || 'mine';
+  lbIndex    = workIndex;
+  lbImgIndex = imgIndex;
+  renderLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
 /* ── Portfolio Sub-page Navigation ── */
 function openPortSub(which) {
