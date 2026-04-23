@@ -552,18 +552,18 @@ nav{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:cente
 .story-desc{font-size:14px;line-height:1.8;color:#3d3d3f;font-weight:300}
 
 /* PORTFOLIO */
-.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pcard{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#f5f5f7;aspect-ratio:4/3}
-.pcard-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
-.pcard-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#c0c0c8;font-size:11px;letter-spacing:.06em;background:#f5f5f7}
-.pcard-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,0) 50%);opacity:0;transition:opacity .35s;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+.port-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
+.pcard{position:relative;overflow:hidden;cursor:pointer;background:#1d1d1f;aspect-ratio:3/4}
+.pcard-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+.pcard-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#555;font-size:11px;letter-spacing:.06em;background:#1d1d1f}
+.pcard-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 45%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 18px}
 .pcard:hover .pcard-img{transform:scale(1.04)}
-.pcard:hover .pcard-overlay{opacity:1}
-.pcard-cat{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:4px}
-.pcard-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff;line-height:1.3}
-.pcard-count{font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.55);margin-top:5px}
-.soon-card{background:#fafafa;border:1px dashed #e0e0e5;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:160px;aspect-ratio:4/3}
-.soon-card span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c0c0c8}
+.pcard:hover .pcard-overlay{background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.15) 50%,transparent 75%)}
+.pcard-cat{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:5px}
+.pcard-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.01em}
+.pcard-count{font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-top:5px}
+.soon-card{background:#141414;border:1px dashed #2a2a2a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:200px;aspect-ratio:3/4}
+.soon-card span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#3a3a3a}
 
 /* LIGHTBOX */
 #lightbox{position:fixed;inset:0;z-index:700;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:24px}
@@ -724,7 +724,7 @@ body.en .zh{display:none!important}
   nav{padding:0 20px}.nav-links{display:none}
   #about{grid-template-columns:1fr;gap:36px;padding:80px 20px}
   .sec{padding:72px 20px}
-  .port-grid{grid-template-columns:1fr}
+  .port-grid{grid-template-columns:repeat(2,1fr);gap:2px}
   .soc-grid{grid-template-columns:1fr}
   .story-item{grid-template-columns:1fr;gap:6px}
   #flights{padding:16px 0 12px!important;margin:0 60px!important;border-radius:12px!important}
